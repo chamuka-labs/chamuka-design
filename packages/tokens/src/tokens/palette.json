@@ -1,0 +1,140 @@
+{
+  "palette": {
+    "$type": "color",
+    "$description": "Daybreak v2 raw palette. Fixed values, never themed. CSS: --db-<name>.",
+    "ground": {
+      "$value": "#12100E",
+      "$description": "page"
+    },
+    "ground-2": {
+      "$value": "#1A1714",
+      "$description": "panel"
+    },
+    "ground-3": {
+      "$value": "#211D19",
+      "$description": "raised: inputs, chips, hovered panel"
+    },
+    "line": {
+      "$value": "#34302A",
+      "$description": "hairline, decorative 1.45:1"
+    },
+    "line-strong": {
+      "$value": "#4A443B",
+      "$description": "panel edge, input edge 1.97:1"
+    },
+    "line-focus": {
+      "$value": "#8F8678",
+      "$description": "hovered edges"
+    },
+    "cream": {
+      "$value": "#F2EAD9",
+      "$description": "primary text 15.9:1"
+    },
+    "stone": {
+      "$value": "#A39A89",
+      "$description": "secondary text 6.8:1"
+    },
+    "dust": {
+      "$value": "#8F8678",
+      "$description": "tertiary text, meta 5.3:1"
+    },
+    "ash": {
+      "$value": "#7E7668",
+      "$description": "large muted display only (>=24px) 4.2:1"
+    },
+    "ember": {
+      "$value": "#E24E1B",
+      "$description": "identity; fills, labels, rules. 4.8:1 on ground"
+    },
+    "ember-hi": {
+      "$value": "#F06A3A",
+      "$description": "ember text on --db-ground-3 and hover fill"
+    },
+    "ember-lo": {
+      "$value": "#B8380F",
+      "$description": "ember text on paper at 4.9:1 (not a fill: ink on it is 3.3:1)"
+    },
+    "on-ember": {
+      "$value": "#12100E",
+      "$description": "text on ember fills 4.8:1 (cream fails at 3.3:1)"
+    },
+    "gold": {
+      "$value": "#E6B422"
+    },
+    "slate": {
+      "$value": "#7FA0D4",
+      "$description": "v1 slate #2B4C7E lifted for dark"
+    },
+    "mineral": {
+      "$value": "#3FB39F"
+    },
+    "forest": {
+      "$value": "#5E9C7E"
+    },
+    "coral": {
+      "$value": "#E8789C"
+    },
+    "paper": {
+      "$value": "#F2EAD9",
+      "$description": "light page (= --db-cream)"
+    },
+    "paper-2": {
+      "$value": "#F8F3E8",
+      "$description": "light panel"
+    },
+    "paper-3": {
+      "$value": "#EAE0CC",
+      "$description": "light raised"
+    },
+    "rule": {
+      "$value": "#D9CEB8",
+      "$description": "light hairline"
+    },
+    "rule-strong": {
+      "$value": "#C4B8A0",
+      "$description": "light edge"
+    },
+    "ink": {
+      "$value": "#12100E",
+      "$description": "light primary text 15.9:1 on paper"
+    },
+    "ink-2": {
+      "$value": "#4F483E",
+      "$description": "light secondary 7.5:1"
+    },
+    "ink-3": {
+      "$value": "#5C5449",
+      "$description": "light tertiary 6.2:1"
+    },
+    "ink-4": {
+      "$value": "#7A7163",
+      "$description": "light large muted display only 4.0:1"
+    },
+    "ember-ink": {
+      "$value": "#A8340E",
+      "$description": "ember as small text on paper 5.6:1"
+    },
+    "ember-ink-hi": {
+      "$value": "#9C2F0C",
+      "$description": "hover of the above 6.2:1"
+    },
+    "on-paper": {
+      "$value": "#12100E"
+    },
+    "gold-ink": {
+      "$value": "#A07800"
+    },
+    "slate-ink": {
+      "$value": "#2B4C7E"
+    },
+    "mineral-ink": {
+      "$value": "#1F7A6B"
+    },
+    "forest-ink": {
+      "$value": "#2F6B4F"
+    },
+    "coral-ink": {
+      "$value": "#B83A66"
+    }
+  }
+}

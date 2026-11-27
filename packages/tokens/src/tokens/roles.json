@@ -1,0 +1,177 @@
+{
+  "role": {
+    "$type": "color",
+    "$description": "Daybreak v2 semantic roles. Components use these. CSS: --db-<name>, themed by data-theme / prefers-color-scheme.",
+    "dark": {
+      "bg": {
+        "$value": "{palette.ground}"
+      },
+      "surface": {
+        "$value": "{palette.ground-2}"
+      },
+      "raised": {
+        "$value": "{palette.ground-3}"
+      },
+      "border": {
+        "$value": "{palette.line}"
+      },
+      "border-strong": {
+        "$value": "{palette.line-strong}"
+      },
+      "border-hover": {
+        "$value": "{palette.line-focus}"
+      },
+      "fg": {
+        "$value": "{palette.cream}",
+        "$description": "15.9 bg · 14.9 surface · 14.0 raised"
+      },
+      "fg-2": {
+        "$value": "{palette.stone}",
+        "$description": "6.8 · 6.4 · 6.0"
+      },
+      "fg-3": {
+        "$value": "{palette.dust}",
+        "$description": "5.3 · 5.0 · 4.7"
+      },
+      "fg-large": {
+        "$value": "{palette.ash}",
+        "$description": "4.2 · 4.0 — 24px+ only"
+      },
+      "accent": {
+        "$value": "{palette.ember}",
+        "$description": "fills, rules"
+      },
+      "accent-hover": {
+        "$value": "{palette.ember-hi}"
+      },
+      "accent-press": {
+        "$value": "{palette.ember}"
+      },
+      "on-accent": {
+        "$value": "{palette.on-ember}",
+        "$description": "4.8 on ember · 6.2 on hover"
+      },
+      "accent-text": {
+        "$value": "{palette.ember}",
+        "$description": "small ember text 4.8 bg · 4.5 surface"
+      },
+      "accent-text-hover": {
+        "$value": "{palette.ember-hi}",
+        "$description": "5.4 raised"
+      },
+      "sig-gold": {
+        "$value": "{palette.gold}"
+      },
+      "sig-slate": {
+        "$value": "{palette.slate}"
+      },
+      "sig-mineral": {
+        "$value": "{palette.mineral}"
+      },
+      "sig-forest": {
+        "$value": "{palette.forest}"
+      },
+      "sig-coral": {
+        "$value": "{palette.coral}"
+      },
+      "header-bg": {
+        "$value": "rgb(18 16 14 / 0.82)"
+      },
+      "focus": {
+        "$value": "{palette.ember-hi}",
+        "$description": "2px outline, 2px offset — outline, not a shadow"
+      },
+      "grain": {
+        "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"
+      },
+      "hatch": {
+        "$value": "repeating-linear-gradient(135deg, rgb(242 234 217 / 0.025) 0 1px, transparent 1px 10px)"
+      }
+    },
+    "light": {
+      "bg": {
+        "$value": "{palette.paper}"
+      },
+      "surface": {
+        "$value": "{palette.paper-2}"
+      },
+      "raised": {
+        "$value": "{palette.paper-3}"
+      },
+      "border": {
+        "$value": "{palette.rule}"
+      },
+      "border-strong": {
+        "$value": "{palette.rule-strong}"
+      },
+      "border-hover": {
+        "$value": "{palette.ink-3}"
+      },
+      "fg": {
+        "$value": "{palette.ink}",
+        "$description": "15.9 bg · 17.2 surface · 14.5 raised"
+      },
+      "fg-2": {
+        "$value": "{palette.ink-2}",
+        "$description": "7.5 · 8.2 · 6.9"
+      },
+      "fg-3": {
+        "$value": "{palette.ink-3}",
+        "$description": "6.2 · 6.7 · 5.7"
+      },
+      "fg-large": {
+        "$value": "{palette.ink-4}",
+        "$description": "4.0 · 4.3 — 24px+ only"
+      },
+      "accent": {
+        "$value": "{palette.ember}",
+        "$description": "fills, rules: 3.3 on paper = non-text/large only"
+      },
+      "accent-hover": {
+        "$value": "{palette.ember-hi}"
+      },
+      "accent-press": {
+        "$value": "{palette.ember}"
+      },
+      "on-accent": {
+        "$value": "{palette.on-ember}",
+        "$description": "ink on ember 4.8 · on hover 6.2"
+      },
+      "accent-text": {
+        "$value": "{palette.ember-ink}",
+        "$description": "5.6 bg · 6.0 surface · 5.1 raised"
+      },
+      "accent-text-hover": {
+        "$value": "{palette.ember-ink-hi}",
+        "$description": "6.2 · 6.7 · 5.7"
+      },
+      "sig-gold": {
+        "$value": "{palette.gold-ink}"
+      },
+      "sig-slate": {
+        "$value": "{palette.slate-ink}"
+      },
+      "sig-mineral": {
+        "$value": "{palette.mineral-ink}"
+      },
+      "sig-forest": {
+        "$value": "{palette.forest-ink}"
+      },
+      "sig-coral": {
+        "$value": "{palette.coral-ink}"
+      },
+      "header-bg": {
+        "$value": "rgb(242 234 217 / 0.85)"
+      },
+      "focus": {
+        "$value": "{palette.ember-ink}"
+      },
+      "grain": {
+        "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"
+      },
+      "hatch": {
+        "$value": "repeating-linear-gradient(135deg, rgb(18 16 14 / 0.035) 0 1px, transparent 1px 10px)"
+      }
+    }
+  }
+}

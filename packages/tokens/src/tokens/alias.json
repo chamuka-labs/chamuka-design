@@ -1,0 +1,109 @@
+{
+  "alias": {
+    "$type": "color",
+    "$description": "Compatibility layer. shadcn/Tailwind names and v1 colour names mapped onto Daybreak v2 roles. Re-declared inside every theme scope so nested data-theme works. CSS: --<name>.",
+    "background": { "$value": "{role.bg}" },
+    "foreground": { "$value": "{role.fg}" },
+    "card": { "$value": "{role.surface}" },
+    "card-foreground": { "$value": "{role.fg}" },
+    "popover": { "$value": "{role.surface}" },
+    "popover-foreground": { "$value": "{role.fg}" },
+    "primary": {
+      "$value": "{role.accent}",
+      "$description": "Ember fill. Text on it is --primary-foreground (ink), never cream or white."
+    },
+    "primary-foreground": { "$value": "{role.on-accent}" },
+    "primary-hover": { "$value": "{role.accent-hover}" },
+    "primary-press": { "$value": "{role.accent-press}" },
+    "secondary": { "$value": "{role.raised}" },
+    "secondary-foreground": { "$value": "{role.fg}" },
+    "muted-bg": { "$value": "{role.raised}" },
+    "muted-foreground": { "$value": "{role.fg-2}" },
+    "accent": {
+      "$value": "{role.raised}",
+      "$description": "shadcn hover/highlight surface. Not a colour accent: ember is the only accent."
+    },
+    "accent-foreground": { "$value": "{role.fg}" },
+    "destructive": {
+      "$value": "{role.accent}",
+      "$description": "v2 has no second hot colour. Destructive uses an ember edge and ember text; fill only on hover."
+    },
+    "destructive-foreground": { "$value": "{role.on-accent}" },
+    "border": { "$value": "{role.border}" },
+    "input": { "$value": "{role.border-strong}" },
+    "ring": {
+      "$value": "{role.focus}",
+      "$description": "Focus outline colour (2px outline, 2px offset). Not a box-shadow ring."
+    },
+    "accent-drawit": {
+      "$value": "{role.accent}",
+      "$deprecated": "Product accents are retired in v2. Ember is the only accent."
+    },
+    "accent-formit": {
+      "$value": "{role.sig-slate}",
+      "$deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    "accent-play": {
+      "$value": "{role.sig-coral}",
+      "$deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    "accent-forest": {
+      "$value": "{role.sig-forest}",
+      "$deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    "accent-mineral": {
+      "$value": "{role.sig-mineral}",
+      "$deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    "ember": {
+      "$value": "{palette.ember}",
+      "$deprecated": "Use --db-accent (fills) or --db-accent-text (small text)."
+    },
+    "gold": {
+      "$value": "{role.sig-gold}",
+      "$deprecated": "Use --db-sig-gold. Diagrams and status only."
+    },
+    "slate": {
+      "$value": "{role.sig-slate}",
+      "$deprecated": "Use --db-sig-slate. Diagrams and status only."
+    },
+    "paper": {
+      "$value": "{palette.paper}",
+      "$deprecated": "Use --db-bg (themed) or --db-paper (raw)."
+    },
+    "mist": { "$value": "{role.raised}", "$deprecated": "Use --db-raised." },
+    "ink": {
+      "$value": "{palette.ink}",
+      "$deprecated": "Use --db-fg (themed) or --db-ink (raw)."
+    },
+    "muted": { "$value": "{role.fg-2}", "$deprecated": "Use --db-fg-2." },
+    "success": {
+      "$value": "{role.sig-forest}",
+      "$deprecated": "Use --db-sig-forest. Status dots only."
+    },
+    "warning": {
+      "$value": "{role.sig-gold}",
+      "$deprecated": "Use --db-sig-gold. Status dots only."
+    },
+    "danger": {
+      "$value": "{role.accent-text}",
+      "$deprecated": "Use --db-accent-text (text) or --db-accent (edges, fills)."
+    },
+    "info": {
+      "$value": "{role.sig-slate}",
+      "$deprecated": "Use --db-sig-slate. Status dots only."
+    },
+    "play": {
+      "$value": "{role.sig-coral}",
+      "$deprecated": "Use --db-sig-coral. Diagrams and status only."
+    },
+    "forest": {
+      "$value": "{role.sig-forest}",
+      "$deprecated": "Use --db-sig-forest. Diagrams and status only."
+    },
+    "mineral": {
+      "$value": "{role.sig-mineral}",
+      "$deprecated": "Use --db-sig-mineral. Diagrams and status only."
+    }
+  }
+}

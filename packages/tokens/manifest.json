@@ -3,171 +3,490 @@
   "repository": "https://github.com/chamuka-labs/chamuka-design",
   "tokens": [
     {
-      "path": "color.ember",
+      "path": "alias.background",
+      "cssVar": "--background",
+      "value": "{role.bg}"
+    },
+    {
+      "path": "alias.foreground",
+      "cssVar": "--foreground",
+      "value": "{role.fg}"
+    },
+    {
+      "path": "alias.card",
+      "cssVar": "--card",
+      "value": "{role.surface}"
+    },
+    {
+      "path": "alias.card-foreground",
+      "cssVar": "--card-foreground",
+      "value": "{role.fg}"
+    },
+    {
+      "path": "alias.popover",
+      "cssVar": "--popover",
+      "value": "{role.surface}"
+    },
+    {
+      "path": "alias.popover-foreground",
+      "cssVar": "--popover-foreground",
+      "value": "{role.fg}"
+    },
+    {
+      "path": "alias.primary",
+      "cssVar": "--primary",
+      "value": "{role.accent}",
+      "description": "Ember fill. Text on it is --primary-foreground (ink), never cream or white."
+    },
+    {
+      "path": "alias.primary-foreground",
+      "cssVar": "--primary-foreground",
+      "value": "{role.on-accent}"
+    },
+    {
+      "path": "alias.primary-hover",
+      "cssVar": "--primary-hover",
+      "value": "{role.accent-hover}"
+    },
+    {
+      "path": "alias.primary-press",
+      "cssVar": "--primary-press",
+      "value": "{role.accent-press}"
+    },
+    {
+      "path": "alias.secondary",
+      "cssVar": "--secondary",
+      "value": "{role.raised}"
+    },
+    {
+      "path": "alias.secondary-foreground",
+      "cssVar": "--secondary-foreground",
+      "value": "{role.fg}"
+    },
+    {
+      "path": "alias.muted-bg",
+      "cssVar": "--muted-bg",
+      "value": "{role.raised}"
+    },
+    {
+      "path": "alias.muted-foreground",
+      "cssVar": "--muted-foreground",
+      "value": "{role.fg-2}"
+    },
+    {
+      "path": "alias.accent",
+      "cssVar": "--accent",
+      "value": "{role.raised}",
+      "description": "shadcn hover/highlight surface. Not a colour accent: ember is the only accent."
+    },
+    {
+      "path": "alias.accent-foreground",
+      "cssVar": "--accent-foreground",
+      "value": "{role.fg}"
+    },
+    {
+      "path": "alias.destructive",
+      "cssVar": "--destructive",
+      "value": "{role.accent}",
+      "description": "v2 has no second hot colour. Destructive uses an ember edge and ember text; fill only on hover."
+    },
+    {
+      "path": "alias.destructive-foreground",
+      "cssVar": "--destructive-foreground",
+      "value": "{role.on-accent}"
+    },
+    {
+      "path": "alias.border",
+      "cssVar": "--border",
+      "value": "{role.border}"
+    },
+    {
+      "path": "alias.input",
+      "cssVar": "--input",
+      "value": "{role.border-strong}"
+    },
+    {
+      "path": "alias.ring",
+      "cssVar": "--ring",
+      "value": "{role.focus}",
+      "description": "Focus outline colour (2px outline, 2px offset). Not a box-shadow ring."
+    },
+    {
+      "path": "alias.accent-drawit",
+      "cssVar": "--accent-drawit",
+      "value": "{role.accent}",
+      "deprecated": "Product accents are retired in v2. Ember is the only accent."
+    },
+    {
+      "path": "alias.accent-formit",
+      "cssVar": "--accent-formit",
+      "value": "{role.sig-slate}",
+      "deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    {
+      "path": "alias.accent-play",
+      "cssVar": "--accent-play",
+      "value": "{role.sig-coral}",
+      "deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    {
+      "path": "alias.accent-forest",
+      "cssVar": "--accent-forest",
+      "value": "{role.sig-forest}",
+      "deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    {
+      "path": "alias.accent-mineral",
+      "cssVar": "--accent-mineral",
+      "value": "{role.sig-mineral}",
+      "deprecated": "Product accents are retired in v2. Use for diagrams/status dots only."
+    },
+    {
+      "path": "alias.ember",
       "cssVar": "--ember",
-      "value": "#E24E1B",
-      "description": "Master primary. DrawIt accent. Not body text on paper."
+      "value": "{palette.ember}",
+      "deprecated": "Use --db-accent (fills) or --db-accent-text (small text)."
     },
     {
-      "path": "color.gold",
+      "path": "alias.gold",
       "cssVar": "--gold",
-      "value": "#E6B422",
-      "description": "Horizon bar and highlights. Never a product accent."
+      "value": "{role.sig-gold}",
+      "deprecated": "Use --db-sig-gold. Diagrams and status only."
     },
     {
-      "path": "color.slate",
+      "path": "alias.slate",
       "cssVar": "--slate",
-      "value": "#2B4C7E",
-      "description": "Horizon rule, FormIt accent, info."
+      "value": "{role.sig-slate}",
+      "deprecated": "Use --db-sig-slate. Diagrams and status only."
     },
     {
-      "path": "color.paper",
+      "path": "alias.paper",
       "cssVar": "--paper",
-      "value": "#FFF8F1",
-      "description": "Morning paper — default light background."
+      "value": "{palette.paper}",
+      "deprecated": "Use --db-bg (themed) or --db-paper (raw)."
     },
     {
-      "path": "color.mist",
+      "path": "alias.mist",
       "cssVar": "--mist",
-      "value": "#F3EBE0",
-      "description": "Subtle surfaces and chips."
+      "value": "{role.raised}",
+      "deprecated": "Use --db-raised."
     },
     {
-      "path": "color.ink",
+      "path": "alias.ink",
       "cssVar": "--ink",
-      "value": "#17141C",
-      "description": "Text and mono lockups."
+      "value": "{palette.ink}",
+      "deprecated": "Use --db-fg (themed) or --db-ink (raw)."
     },
     {
-      "path": "color.muted",
+      "path": "alias.muted",
       "cssVar": "--muted",
-      "value": "#6B645C",
-      "description": "Secondary text. AA on paper."
+      "value": "{role.fg-2}",
+      "deprecated": "Use --db-fg-2."
     },
     {
-      "path": "color.success",
+      "path": "alias.success",
       "cssVar": "--success",
-      "value": "#1F8A5B",
-      "description": "Success. AA large on paper only."
+      "value": "{role.sig-forest}",
+      "deprecated": "Use --db-sig-forest. Status dots only."
     },
     {
-      "path": "color.warning",
+      "path": "alias.warning",
       "cssVar": "--warning",
-      "value": "#E0A100",
-      "description": "Warning. Use on ink, not paper."
+      "value": "{role.sig-gold}",
+      "deprecated": "Use --db-sig-gold. Status dots only."
     },
     {
-      "path": "color.danger",
+      "path": "alias.danger",
       "cssVar": "--danger",
-      "value": "#C5362B",
-      "description": "Danger / error. AA on paper."
+      "value": "{role.accent-text}",
+      "deprecated": "Use --db-accent-text (text) or --db-accent (edges, fills)."
     },
     {
-      "path": "color.info",
+      "path": "alias.info",
       "cssVar": "--info",
-      "value": "#2B4C7E",
-      "description": "Info — same as slate."
+      "value": "{role.sig-slate}",
+      "deprecated": "Use --db-sig-slate. Status dots only."
     },
     {
-      "path": "color.play",
+      "path": "alias.play",
       "cssVar": "--play",
-      "value": "#D9487A",
-      "description": "Coral — playful-but-adult products (Play is an example)."
+      "value": "{role.sig-coral}",
+      "deprecated": "Use --db-sig-coral. Diagrams and status only."
     },
     {
-      "path": "color.forest",
+      "path": "alias.forest",
       "cssVar": "--forest",
-      "value": "#2F6B4F",
-      "description": "Forest — calm green products (Waypoint is an example)."
+      "value": "{role.sig-forest}",
+      "deprecated": "Use --db-sig-forest. Diagrams and status only."
     },
     {
-      "path": "color.mineral",
+      "path": "alias.mineral",
       "cssVar": "--mineral",
-      "value": "#1F7A6B",
-      "description": "Mineral — infra / platform tools (Vmette is an example)."
+      "value": "{role.sig-mineral}",
+      "deprecated": "Use --db-sig-mineral. Diagrams and status only."
     },
     {
-      "path": "color.white",
-      "cssVar": "--white",
-      "value": "#FFFFFF"
+      "path": "db.font-display",
+      "cssVar": "--db-font-display",
+      "value": "'Archivo', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif"
     },
     {
-      "path": "color.neutral.50",
-      "cssVar": "--neutral-50",
-      "value": "#FBF7F2"
+      "path": "db.font-body",
+      "cssVar": "--db-font-body",
+      "value": "'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
     },
     {
-      "path": "color.neutral.100",
-      "cssVar": "--neutral-100",
-      "value": "#F3EBE0"
+      "path": "db.font-mono",
+      "cssVar": "--db-font-mono",
+      "value": "'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
     },
     {
-      "path": "color.neutral.200",
-      "cssVar": "--neutral-200",
-      "value": "#E6D9C8"
+      "path": "db.display-stretch",
+      "cssVar": "--db-display-stretch",
+      "value": "72%",
+      "description": "condensed"
     },
     {
-      "path": "color.neutral.300",
-      "cssVar": "--neutral-300",
-      "value": "#D0C0AA"
+      "path": "db.display-weight",
+      "cssVar": "--db-display-weight",
+      "value": "800"
     },
     {
-      "path": "color.neutral.400",
-      "cssVar": "--neutral-400",
-      "value": "#B3A28A"
+      "path": "db.text-hero",
+      "cssVar": "--db-text-hero",
+      "value": "clamp(3rem, 2.1rem + 3.6vw, 5.75rem)",
+      "description": "48 -> 92: the one hero headline"
     },
     {
-      "path": "color.neutral.500",
-      "cssVar": "--neutral-500",
-      "value": "#8F8170"
+      "path": "db.text-d1",
+      "cssVar": "--db-text-d1",
+      "value": "clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem)",
+      "description": "36 -> 60: section headings"
     },
     {
-      "path": "color.neutral.600",
-      "cssVar": "--neutral-600",
-      "value": "#6B645C"
+      "path": "db.text-d2",
+      "cssVar": "--db-text-d2",
+      "value": "clamp(2rem, 1.6rem + 1.6vw, 3rem)",
+      "description": "32 -> 48"
     },
     {
-      "path": "color.neutral.700",
-      "cssVar": "--neutral-700",
-      "value": "#524C46"
+      "path": "db.text-d3",
+      "cssVar": "--db-text-d3",
+      "value": "clamp(1.5rem, 1.3rem + 0.8vw, 2rem)",
+      "description": "24 -> 32"
     },
     {
-      "path": "color.neutral.800",
-      "cssVar": "--neutral-800",
-      "value": "#3A3531"
+      "path": "db.text-d4",
+      "cssVar": "--db-text-d4",
+      "value": "1.5rem",
+      "description": "24"
     },
     {
-      "path": "color.neutral.900",
-      "cssVar": "--neutral-900",
-      "value": "#241F1C"
+      "path": "db.text-lead",
+      "cssVar": "--db-text-lead",
+      "value": "clamp(1.125rem, 1rem + 0.4vw, 1.3125rem)",
+      "description": "18 -> 21"
     },
     {
-      "path": "color.neutral.950",
-      "cssVar": "--neutral-950",
-      "value": "#17141C"
+      "path": "db.text-body",
+      "cssVar": "--db-text-body",
+      "value": "1rem",
+      "description": "16"
+    },
+    {
+      "path": "db.text-small",
+      "cssVar": "--db-text-small",
+      "value": "0.9375rem",
+      "description": "15"
+    },
+    {
+      "path": "db.text-label",
+      "cssVar": "--db-text-label",
+      "value": "0.8125rem",
+      "description": "13, mono uppercase, tracking 0.08em"
+    },
+    {
+      "path": "db.text-micro",
+      "cssVar": "--db-text-micro",
+      "value": "0.75rem",
+      "description": "12"
+    },
+    {
+      "path": "db.leading-display",
+      "cssVar": "--db-leading-display",
+      "value": "0.9"
+    },
+    {
+      "path": "db.leading-tight",
+      "cssVar": "--db-leading-tight",
+      "value": "1.15"
+    },
+    {
+      "path": "db.leading-body",
+      "cssVar": "--db-leading-body",
+      "value": "1.6"
+    },
+    {
+      "path": "db.tracking-display",
+      "cssVar": "--db-tracking-display",
+      "value": "-0.01em"
+    },
+    {
+      "path": "db.tracking-label",
+      "cssVar": "--db-tracking-label",
+      "value": "0.08em"
+    },
+    {
+      "path": "db.space-1",
+      "cssVar": "--db-space-1",
+      "value": "4px"
+    },
+    {
+      "path": "db.space-2",
+      "cssVar": "--db-space-2",
+      "value": "8px"
+    },
+    {
+      "path": "db.space-3",
+      "cssVar": "--db-space-3",
+      "value": "12px"
+    },
+    {
+      "path": "db.space-4",
+      "cssVar": "--db-space-4",
+      "value": "16px"
+    },
+    {
+      "path": "db.space-5",
+      "cssVar": "--db-space-5",
+      "value": "24px"
+    },
+    {
+      "path": "db.space-6",
+      "cssVar": "--db-space-6",
+      "value": "32px"
+    },
+    {
+      "path": "db.space-7",
+      "cssVar": "--db-space-7",
+      "value": "48px"
+    },
+    {
+      "path": "db.space-8",
+      "cssVar": "--db-space-8",
+      "value": "64px"
+    },
+    {
+      "path": "db.space-9",
+      "cssVar": "--db-space-9",
+      "value": "96px"
+    },
+    {
+      "path": "db.space-10",
+      "cssVar": "--db-space-10",
+      "value": "128px"
+    },
+    {
+      "path": "db.space-11",
+      "cssVar": "--db-space-11",
+      "value": "192px"
+    },
+    {
+      "path": "db.section",
+      "cssVar": "--db-section",
+      "value": "clamp(96px, 8vw + 48px, 192px)",
+      "description": "vertical gap between sections"
+    },
+    {
+      "path": "db.container",
+      "cssVar": "--db-container",
+      "value": "1200px"
+    },
+    {
+      "path": "db.container-narrow",
+      "cssVar": "--db-container-narrow",
+      "value": "800px"
+    },
+    {
+      "path": "db.gutter",
+      "cssVar": "--db-gutter",
+      "value": "clamp(20px, 4vw, 32px)"
+    },
+    {
+      "path": "db.columns",
+      "cssVar": "--db-columns",
+      "value": "12"
+    },
+    {
+      "path": "db.radius-0",
+      "cssVar": "--db-radius-0",
+      "value": "0"
+    },
+    {
+      "path": "db.radius-1",
+      "cssVar": "--db-radius-1",
+      "value": "2px",
+      "description": "buttons, chips, inputs"
+    },
+    {
+      "path": "db.radius-2",
+      "cssVar": "--db-radius-2",
+      "value": "4px",
+      "description": "panels, cards"
+    },
+    {
+      "path": "db.radius-pill",
+      "cssVar": "--db-radius-pill",
+      "value": "999px",
+      "description": "status dots only"
+    },
+    {
+      "path": "db.hairline",
+      "cssVar": "--db-hairline",
+      "value": "1px"
+    },
+    {
+      "path": "db.ease",
+      "cssVar": "--db-ease",
+      "value": "cubic-bezier(0.2, 0.7, 0.1, 1)"
+    },
+    {
+      "path": "db.dur-fast",
+      "cssVar": "--db-dur-fast",
+      "value": "120ms"
+    },
+    {
+      "path": "db.dur",
+      "cssVar": "--db-dur",
+      "value": "220ms"
+    },
+    {
+      "path": "db.dur-slow",
+      "cssVar": "--db-dur-slow",
+      "value": "480ms"
     },
     {
       "path": "motion.duration.fast",
       "cssVar": "--duration-fast",
-      "value": "150ms"
+      "value": "120ms"
     },
     {
       "path": "motion.duration.base",
       "cssVar": "--duration-base",
-      "value": "200ms"
+      "value": "220ms"
     },
     {
       "path": "motion.duration.slow",
       "cssVar": "--duration-slow",
-      "value": "300ms"
+      "value": "480ms"
     },
     {
       "path": "motion.easing.out",
       "cssVar": "--easing-out",
       "value": [
-        0.16,
-        1,
-        0.3,
+        0.2,
+        0.7,
+        0.1,
         1
       ]
     },
@@ -176,274 +495,608 @@
       "cssVar": "--easing-standard",
       "value": [
         0.2,
-        0,
-        0,
+        0.7,
+        0.1,
         1
       ]
     },
     {
+      "path": "color.white",
+      "cssVar": "--white",
+      "value": "#FFFFFF",
+      "deprecated": "Daybreak v2 never uses pure white. Use --db-fg / --db-paper-2."
+    },
+    {
+      "path": "color.neutral.50",
+      "cssVar": "--neutral-50",
+      "value": "#FBF7F2",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.100",
+      "cssVar": "--neutral-100",
+      "value": "#F3EBE0",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.200",
+      "cssVar": "--neutral-200",
+      "value": "#E6D9C8",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.300",
+      "cssVar": "--neutral-300",
+      "value": "#D0C0AA",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.400",
+      "cssVar": "--neutral-400",
+      "value": "#B3A28A",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.500",
+      "cssVar": "--neutral-500",
+      "value": "#8F8170",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.600",
+      "cssVar": "--neutral-600",
+      "value": "#6B645C",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.700",
+      "cssVar": "--neutral-700",
+      "value": "#524C46",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.800",
+      "cssVar": "--neutral-800",
+      "value": "#3A3531",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.900",
+      "cssVar": "--neutral-900",
+      "value": "#241F1C",
+      "deprecated": true
+    },
+    {
+      "path": "color.neutral.950",
+      "cssVar": "--neutral-950",
+      "value": "#17141C",
+      "deprecated": true
+    },
+    {
+      "path": "palette.ground",
+      "cssVar": "--db-ground",
+      "value": "#12100E",
+      "description": "page"
+    },
+    {
+      "path": "palette.ground-2",
+      "cssVar": "--db-ground-2",
+      "value": "#1A1714",
+      "description": "panel"
+    },
+    {
+      "path": "palette.ground-3",
+      "cssVar": "--db-ground-3",
+      "value": "#211D19",
+      "description": "raised: inputs, chips, hovered panel"
+    },
+    {
+      "path": "palette.line",
+      "cssVar": "--db-line",
+      "value": "#34302A",
+      "description": "hairline, decorative 1.45:1"
+    },
+    {
+      "path": "palette.line-strong",
+      "cssVar": "--db-line-strong",
+      "value": "#4A443B",
+      "description": "panel edge, input edge 1.97:1"
+    },
+    {
+      "path": "palette.line-focus",
+      "cssVar": "--db-line-focus",
+      "value": "#8F8678",
+      "description": "hovered edges"
+    },
+    {
+      "path": "palette.cream",
+      "cssVar": "--db-cream",
+      "value": "#F2EAD9",
+      "description": "primary text 15.9:1"
+    },
+    {
+      "path": "palette.stone",
+      "cssVar": "--db-stone",
+      "value": "#A39A89",
+      "description": "secondary text 6.8:1"
+    },
+    {
+      "path": "palette.dust",
+      "cssVar": "--db-dust",
+      "value": "#8F8678",
+      "description": "tertiary text, meta 5.3:1"
+    },
+    {
+      "path": "palette.ash",
+      "cssVar": "--db-ash",
+      "value": "#7E7668",
+      "description": "large muted display only (>=24px) 4.2:1"
+    },
+    {
+      "path": "palette.ember",
+      "cssVar": "--db-ember",
+      "value": "#E24E1B",
+      "description": "identity; fills, labels, rules. 4.8:1 on ground"
+    },
+    {
+      "path": "palette.ember-hi",
+      "cssVar": "--db-ember-hi",
+      "value": "#F06A3A",
+      "description": "ember text on --db-ground-3 and hover fill"
+    },
+    {
+      "path": "palette.ember-lo",
+      "cssVar": "--db-ember-lo",
+      "value": "#B8380F",
+      "description": "ember text on paper at 4.9:1 (not a fill: ink on it is 3.3:1)"
+    },
+    {
+      "path": "palette.on-ember",
+      "cssVar": "--db-on-ember",
+      "value": "#12100E",
+      "description": "text on ember fills 4.8:1 (cream fails at 3.3:1)"
+    },
+    {
+      "path": "palette.gold",
+      "cssVar": "--db-gold",
+      "value": "#E6B422"
+    },
+    {
+      "path": "palette.slate",
+      "cssVar": "--db-slate",
+      "value": "#7FA0D4",
+      "description": "v1 slate #2B4C7E lifted for dark"
+    },
+    {
+      "path": "palette.mineral",
+      "cssVar": "--db-mineral",
+      "value": "#3FB39F"
+    },
+    {
+      "path": "palette.forest",
+      "cssVar": "--db-forest",
+      "value": "#5E9C7E"
+    },
+    {
+      "path": "palette.coral",
+      "cssVar": "--db-coral",
+      "value": "#E8789C"
+    },
+    {
+      "path": "palette.paper",
+      "cssVar": "--db-paper",
+      "value": "#F2EAD9",
+      "description": "light page (= --db-cream)"
+    },
+    {
+      "path": "palette.paper-2",
+      "cssVar": "--db-paper-2",
+      "value": "#F8F3E8",
+      "description": "light panel"
+    },
+    {
+      "path": "palette.paper-3",
+      "cssVar": "--db-paper-3",
+      "value": "#EAE0CC",
+      "description": "light raised"
+    },
+    {
+      "path": "palette.rule",
+      "cssVar": "--db-rule",
+      "value": "#D9CEB8",
+      "description": "light hairline"
+    },
+    {
+      "path": "palette.rule-strong",
+      "cssVar": "--db-rule-strong",
+      "value": "#C4B8A0",
+      "description": "light edge"
+    },
+    {
+      "path": "palette.ink",
+      "cssVar": "--db-ink",
+      "value": "#12100E",
+      "description": "light primary text 15.9:1 on paper"
+    },
+    {
+      "path": "palette.ink-2",
+      "cssVar": "--db-ink-2",
+      "value": "#4F483E",
+      "description": "light secondary 7.5:1"
+    },
+    {
+      "path": "palette.ink-3",
+      "cssVar": "--db-ink-3",
+      "value": "#5C5449",
+      "description": "light tertiary 6.2:1"
+    },
+    {
+      "path": "palette.ink-4",
+      "cssVar": "--db-ink-4",
+      "value": "#7A7163",
+      "description": "light large muted display only 4.0:1"
+    },
+    {
+      "path": "palette.ember-ink",
+      "cssVar": "--db-ember-ink",
+      "value": "#A8340E",
+      "description": "ember as small text on paper 5.6:1"
+    },
+    {
+      "path": "palette.ember-ink-hi",
+      "cssVar": "--db-ember-ink-hi",
+      "value": "#9C2F0C",
+      "description": "hover of the above 6.2:1"
+    },
+    {
+      "path": "palette.on-paper",
+      "cssVar": "--db-on-paper",
+      "value": "#12100E"
+    },
+    {
+      "path": "palette.gold-ink",
+      "cssVar": "--db-gold-ink",
+      "value": "#A07800"
+    },
+    {
+      "path": "palette.slate-ink",
+      "cssVar": "--db-slate-ink",
+      "value": "#2B4C7E"
+    },
+    {
+      "path": "palette.mineral-ink",
+      "cssVar": "--db-mineral-ink",
+      "value": "#1F7A6B"
+    },
+    {
+      "path": "palette.forest-ink",
+      "cssVar": "--db-forest-ink",
+      "value": "#2F6B4F"
+    },
+    {
+      "path": "palette.coral-ink",
+      "cssVar": "--db-coral-ink",
+      "value": "#B83A66"
+    },
+    {
       "path": "radius.sm",
       "cssVar": "--radius-sm",
-      "value": "4px"
+      "value": "2px"
     },
     {
       "path": "radius.md",
       "cssVar": "--radius-md",
-      "value": "8px"
+      "value": "2px",
+      "description": "Buttons, inputs, chips."
     },
     {
       "path": "radius.lg",
       "cssVar": "--radius-lg",
-      "value": "12px"
+      "value": "4px",
+      "description": "Panels, cards, dialogs, popovers."
     },
     {
       "path": "radius.xl",
       "cssVar": "--radius-xl",
-      "value": "20px"
+      "value": "4px",
+      "deprecated": "Clamped to 4px. Daybreak v2 has no rounded-xl."
     },
     {
       "path": "radius.full",
       "cssVar": "--radius-full",
-      "value": "9999px"
+      "value": "9999px",
+      "description": "Status dots, radios and spinners only."
     },
     {
       "path": "radius.default",
       "cssVar": "--radius",
-      "value": "0.5rem",
+      "value": "4px",
       "description": "Shadcn --radius on :root."
     },
     {
-      "path": "semantic.light.background",
-      "cssVar": "--background",
-      "value": "{color.paper}"
+      "path": "role.dark.bg",
+      "cssVar": "--db-bg",
+      "value": "{palette.ground}"
     },
     {
-      "path": "semantic.light.foreground",
-      "cssVar": "--foreground",
-      "value": "{color.ink}"
+      "path": "role.dark.surface",
+      "cssVar": "--db-surface",
+      "value": "{palette.ground-2}"
     },
     {
-      "path": "semantic.light.card",
-      "cssVar": "--card",
-      "value": "{color.paper}"
+      "path": "role.dark.raised",
+      "cssVar": "--db-raised",
+      "value": "{palette.ground-3}"
     },
     {
-      "path": "semantic.light.card-foreground",
-      "cssVar": "--card-foreground",
-      "value": "{color.ink}"
+      "path": "role.dark.border",
+      "cssVar": "--db-border",
+      "value": "{palette.line}"
     },
     {
-      "path": "semantic.light.popover",
-      "cssVar": "--popover",
-      "value": "#FFFFFF"
+      "path": "role.dark.border-strong",
+      "cssVar": "--db-border-strong",
+      "value": "{palette.line-strong}"
     },
     {
-      "path": "semantic.light.popover-foreground",
-      "cssVar": "--popover-foreground",
-      "value": "{color.ink}"
+      "path": "role.dark.border-hover",
+      "cssVar": "--db-border-hover",
+      "value": "{palette.line-focus}"
     },
     {
-      "path": "semantic.light.primary",
-      "cssVar": "--primary",
-      "value": "{color.ember}"
+      "path": "role.dark.fg",
+      "cssVar": "--db-fg",
+      "value": "{palette.cream}",
+      "description": "15.9 bg · 14.9 surface · 14.0 raised"
     },
     {
-      "path": "semantic.light.primary-foreground",
-      "cssVar": "--primary-foreground",
-      "value": "#FFFFFF",
-      "description": "Large UI only; ember fails WCAG AA for small text on paper (3.74:1)."
+      "path": "role.dark.fg-2",
+      "cssVar": "--db-fg-2",
+      "value": "{palette.stone}",
+      "description": "6.8 · 6.4 · 6.0"
     },
     {
-      "path": "semantic.light.secondary",
-      "cssVar": "--secondary",
-      "value": "{color.mist}"
+      "path": "role.dark.fg-3",
+      "cssVar": "--db-fg-3",
+      "value": "{palette.dust}",
+      "description": "5.3 · 5.0 · 4.7"
     },
     {
-      "path": "semantic.light.secondary-foreground",
-      "cssVar": "--secondary-foreground",
-      "value": "{color.ink}"
+      "path": "role.dark.fg-large",
+      "cssVar": "--db-fg-large",
+      "value": "{palette.ash}",
+      "description": "4.2 · 4.0 — 24px+ only"
     },
     {
-      "path": "semantic.light.muted-bg",
-      "cssVar": "--muted-bg",
-      "value": "{color.mist}"
+      "path": "role.dark.accent",
+      "cssVar": "--db-accent",
+      "value": "{palette.ember}",
+      "description": "fills, rules"
     },
     {
-      "path": "semantic.light.muted-foreground",
-      "cssVar": "--muted-foreground",
-      "value": "{color.muted}"
+      "path": "role.dark.accent-hover",
+      "cssVar": "--db-accent-hover",
+      "value": "{palette.ember-hi}"
     },
     {
-      "path": "semantic.light.accent",
-      "cssVar": "--accent",
-      "value": "{color.slate}"
+      "path": "role.dark.accent-press",
+      "cssVar": "--db-accent-press",
+      "value": "{palette.ember}"
     },
     {
-      "path": "semantic.light.accent-foreground",
-      "cssVar": "--accent-foreground",
-      "value": "{color.paper}"
+      "path": "role.dark.on-accent",
+      "cssVar": "--db-on-accent",
+      "value": "{palette.on-ember}",
+      "description": "4.8 on ember · 6.2 on hover"
     },
     {
-      "path": "semantic.light.destructive",
-      "cssVar": "--destructive",
-      "value": "{color.danger}"
+      "path": "role.dark.accent-text",
+      "cssVar": "--db-accent-text",
+      "value": "{palette.ember}",
+      "description": "small ember text 4.8 bg · 4.5 surface"
     },
     {
-      "path": "semantic.light.destructive-foreground",
-      "cssVar": "--destructive-foreground",
-      "value": "#FFFFFF"
+      "path": "role.dark.accent-text-hover",
+      "cssVar": "--db-accent-text-hover",
+      "value": "{palette.ember-hi}",
+      "description": "5.4 raised"
     },
     {
-      "path": "semantic.light.border",
-      "cssVar": "--border",
-      "value": "#E6D9C8"
+      "path": "role.dark.sig-gold",
+      "cssVar": "--db-sig-gold",
+      "value": "{palette.gold}"
     },
     {
-      "path": "semantic.light.input",
-      "cssVar": "--input",
-      "value": "#E6D9C8"
+      "path": "role.dark.sig-slate",
+      "cssVar": "--db-sig-slate",
+      "value": "{palette.slate}"
     },
     {
-      "path": "semantic.light.ring",
-      "cssVar": "--ring",
-      "value": "{color.ember}"
+      "path": "role.dark.sig-mineral",
+      "cssVar": "--db-sig-mineral",
+      "value": "{palette.mineral}"
     },
     {
-      "path": "semantic.light.accent-drawit",
-      "cssVar": "--accent-drawit",
-      "value": "{color.ember}"
+      "path": "role.dark.sig-forest",
+      "cssVar": "--db-sig-forest",
+      "value": "{palette.forest}"
     },
     {
-      "path": "semantic.light.accent-formit",
-      "cssVar": "--accent-formit",
-      "value": "{color.slate}"
+      "path": "role.dark.sig-coral",
+      "cssVar": "--db-sig-coral",
+      "value": "{palette.coral}"
     },
     {
-      "path": "semantic.light.accent-play",
-      "cssVar": "--accent-play",
-      "value": "{color.play}"
+      "path": "role.dark.header-bg",
+      "cssVar": "--db-header-bg",
+      "value": "rgb(18 16 14 / 0.82)"
     },
     {
-      "path": "semantic.light.accent-forest",
-      "cssVar": "--accent-forest",
-      "value": "{color.forest}"
+      "path": "role.dark.focus",
+      "cssVar": "--db-focus",
+      "value": "{palette.ember-hi}",
+      "description": "2px outline, 2px offset — outline, not a shadow"
     },
     {
-      "path": "semantic.light.accent-mineral",
-      "cssVar": "--accent-mineral",
-      "value": "{color.mineral}"
+      "path": "role.dark.grain",
+      "cssVar": "--db-grain",
+      "value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"
     },
     {
-      "path": "semantic.dark.background",
-      "cssVar": "--background",
-      "value": "#17141C"
+      "path": "role.dark.hatch",
+      "cssVar": "--db-hatch",
+      "value": "repeating-linear-gradient(135deg, rgb(242 234 217 / 0.025) 0 1px, transparent 1px 10px)"
     },
     {
-      "path": "semantic.dark.foreground",
-      "cssVar": "--foreground",
-      "value": "#FFF8F1"
+      "path": "role.light.bg",
+      "cssVar": "--db-bg",
+      "value": "{palette.paper}"
     },
     {
-      "path": "semantic.dark.card",
-      "cssVar": "--card",
-      "value": "#241F1C"
+      "path": "role.light.surface",
+      "cssVar": "--db-surface",
+      "value": "{palette.paper-2}"
     },
     {
-      "path": "semantic.dark.card-foreground",
-      "cssVar": "--card-foreground",
-      "value": "#FFF8F1"
+      "path": "role.light.raised",
+      "cssVar": "--db-raised",
+      "value": "{palette.paper-3}"
     },
     {
-      "path": "semantic.dark.popover",
-      "cssVar": "--popover",
-      "value": "#241F1C"
+      "path": "role.light.border",
+      "cssVar": "--db-border",
+      "value": "{palette.rule}"
     },
     {
-      "path": "semantic.dark.popover-foreground",
-      "cssVar": "--popover-foreground",
-      "value": "#FFF8F1"
+      "path": "role.light.border-strong",
+      "cssVar": "--db-border-strong",
+      "value": "{palette.rule-strong}"
     },
     {
-      "path": "semantic.dark.primary",
-      "cssVar": "--primary",
-      "value": "#F06A3A",
-      "description": "Slightly lifted ember so filled buttons hold contrast on ink."
+      "path": "role.light.border-hover",
+      "cssVar": "--db-border-hover",
+      "value": "{palette.ink-3}"
     },
     {
-      "path": "semantic.dark.primary-foreground",
-      "cssVar": "--primary-foreground",
-      "value": "#17141C"
+      "path": "role.light.fg",
+      "cssVar": "--db-fg",
+      "value": "{palette.ink}",
+      "description": "15.9 bg · 17.2 surface · 14.5 raised"
     },
     {
-      "path": "semantic.dark.secondary",
-      "cssVar": "--secondary",
-      "value": "#3A3531"
+      "path": "role.light.fg-2",
+      "cssVar": "--db-fg-2",
+      "value": "{palette.ink-2}",
+      "description": "7.5 · 8.2 · 6.9"
     },
     {
-      "path": "semantic.dark.secondary-foreground",
-      "cssVar": "--secondary-foreground",
-      "value": "#FFF8F1"
+      "path": "role.light.fg-3",
+      "cssVar": "--db-fg-3",
+      "value": "{palette.ink-3}",
+      "description": "6.2 · 6.7 · 5.7"
     },
     {
-      "path": "semantic.dark.muted-bg",
-      "cssVar": "--muted-bg",
-      "value": "#241F1C"
+      "path": "role.light.fg-large",
+      "cssVar": "--db-fg-large",
+      "value": "{palette.ink-4}",
+      "description": "4.0 · 4.3 — 24px+ only"
     },
     {
-      "path": "semantic.dark.muted-foreground",
-      "cssVar": "--muted-foreground",
-      "value": "#A39484"
+      "path": "role.light.accent",
+      "cssVar": "--db-accent",
+      "value": "{palette.ember}",
+      "description": "fills, rules: 3.3 on paper = non-text/large only"
     },
     {
-      "path": "semantic.dark.accent",
-      "cssVar": "--accent",
-      "value": "#7FA0D4",
-      "description": "Lifted slate for text/links on ink; fills may still use #2B4C7E."
+      "path": "role.light.accent-hover",
+      "cssVar": "--db-accent-hover",
+      "value": "{palette.ember-hi}"
     },
     {
-      "path": "semantic.dark.accent-foreground",
-      "cssVar": "--accent-foreground",
-      "value": "#17141C"
+      "path": "role.light.accent-press",
+      "cssVar": "--db-accent-press",
+      "value": "{palette.ember}"
     },
     {
-      "path": "semantic.dark.destructive",
-      "cssVar": "--destructive",
-      "value": "#E0564A"
+      "path": "role.light.on-accent",
+      "cssVar": "--db-on-accent",
+      "value": "{palette.on-ember}",
+      "description": "ink on ember 4.8 · on hover 6.2"
     },
     {
-      "path": "semantic.dark.destructive-foreground",
-      "cssVar": "--destructive-foreground",
-      "value": "#17141C"
+      "path": "role.light.accent-text",
+      "cssVar": "--db-accent-text",
+      "value": "{palette.ember-ink}",
+      "description": "5.6 bg · 6.0 surface · 5.1 raised"
     },
     {
-      "path": "semantic.dark.border",
-      "cssVar": "--border",
-      "value": "#3A3531"
+      "path": "role.light.accent-text-hover",
+      "cssVar": "--db-accent-text-hover",
+      "value": "{palette.ember-ink-hi}",
+      "description": "6.2 · 6.7 · 5.7"
     },
     {
-      "path": "semantic.dark.input",
-      "cssVar": "--input",
-      "value": "#3A3531"
+      "path": "role.light.sig-gold",
+      "cssVar": "--db-sig-gold",
+      "value": "{palette.gold-ink}"
     },
     {
-      "path": "semantic.dark.ring",
-      "cssVar": "--ring",
-      "value": "#F06A3A"
+      "path": "role.light.sig-slate",
+      "cssVar": "--db-sig-slate",
+      "value": "{palette.slate-ink}"
+    },
+    {
+      "path": "role.light.sig-mineral",
+      "cssVar": "--db-sig-mineral",
+      "value": "{palette.mineral-ink}"
+    },
+    {
+      "path": "role.light.sig-forest",
+      "cssVar": "--db-sig-forest",
+      "value": "{palette.forest-ink}"
+    },
+    {
+      "path": "role.light.sig-coral",
+      "cssVar": "--db-sig-coral",
+      "value": "{palette.coral-ink}"
+    },
+    {
+      "path": "role.light.header-bg",
+      "cssVar": "--db-header-bg",
+      "value": "rgb(242 234 217 / 0.85)"
+    },
+    {
+      "path": "role.light.focus",
+      "cssVar": "--db-focus",
+      "value": "{palette.ember-ink}"
+    },
+    {
+      "path": "role.light.grain",
+      "cssVar": "--db-grain",
+      "value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"
+    },
+    {
+      "path": "role.light.hatch",
+      "cssVar": "--db-hatch",
+      "value": "repeating-linear-gradient(135deg, rgb(18 16 14 / 0.035) 0 1px, transparent 1px 10px)"
     },
     {
       "path": "shadow.sm",
       "cssVar": "--shadow-sm",
-      "value": "0 1px 2px rgb(23 20 28 / 0.06)"
+      "value": "none",
+      "deprecated": "No shadows in v2."
     },
     {
       "path": "shadow.md",
       "cssVar": "--shadow-md",
-      "value": "0 8px 20px rgb(23 20 28 / 0.08)"
+      "value": "none",
+      "deprecated": "No shadows in v2."
     },
     {
       "path": "shadow.lg",
       "cssVar": "--shadow-lg",
-      "value": "0 18px 40px rgb(23 20 28 / 0.12)"
+      "value": "none",
+      "deprecated": "No shadows in v2."
     },
     {
       "path": "spacing.0",
@@ -514,11 +1167,13 @@
       "path": "font.display",
       "cssVar": "--font-display",
       "value": [
-        "Sora",
-        "ui-sans-serif",
-        "system-ui",
+        "Archivo",
+        "Arial Narrow",
+        "Helvetica Neue",
+        "Arial",
         "sans-serif"
-      ]
+      ],
+      "description": "Archivo variable at font-stretch 72%, weight 800, uppercase. Sora is retired."
     },
     {
       "path": "font.sans",
@@ -537,7 +1192,8 @@
         "IBM Plex Mono",
         "ui-monospace",
         "monospace"
-      ]
+      ],
+      "description": "Interface voice: buttons, labels, nav, numbering. 13px uppercase, tracking 0.08em."
     },
     {
       "path": "fontWeight.regular",
@@ -560,30 +1216,45 @@
       "value": "700"
     },
     {
+      "path": "fontWeight.display",
+      "cssVar": "--font-weight-display",
+      "value": "800",
+      "description": "Archivo display weight."
+    },
+    {
       "path": "fontSize.display",
       "cssVar": "--font-size-display",
-      "value": "56px",
-      "description": "Sora 600 / 64"
+      "value": "clamp(3rem, 2.1rem + 3.6vw, 5.75rem)",
+      "description": "= --db-text-hero. One short headline per screen."
     },
     {
       "path": "fontSize.h1",
       "cssVar": "--font-size-h1",
-      "value": "40px"
+      "value": "clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem)",
+      "description": "= --db-text-d1"
     },
     {
       "path": "fontSize.h2",
       "cssVar": "--font-size-h2",
-      "value": "32px"
+      "value": "clamp(2rem, 1.6rem + 1.6vw, 3rem)",
+      "description": "= --db-text-d2"
     },
     {
       "path": "fontSize.h3",
       "cssVar": "--font-size-h3",
-      "value": "24px"
+      "value": "clamp(1.5rem, 1.3rem + 0.8vw, 2rem)",
+      "description": "= --db-text-d3"
     },
     {
       "path": "fontSize.h4",
       "cssVar": "--font-size-h4",
-      "value": "20px"
+      "value": "1.5rem",
+      "description": "= --db-text-d4"
+    },
+    {
+      "path": "fontSize.lead",
+      "cssVar": "--font-size-lead",
+      "value": "clamp(1.125rem, 1rem + 0.4vw, 1.3125rem)"
     },
     {
       "path": "fontSize.body",
@@ -593,7 +1264,13 @@
     {
       "path": "fontSize.small",
       "cssVar": "--font-size-small",
-      "value": "14px"
+      "value": "15px"
+    },
+    {
+      "path": "fontSize.label",
+      "cssVar": "--font-size-label",
+      "value": "13px",
+      "description": "Mono uppercase, tracking 0.08em."
     },
     {
       "path": "fontSize.caption",
@@ -608,47 +1285,57 @@
     {
       "path": "lineHeight.display",
       "cssVar": "--line-height-display",
-      "value": "64px"
+      "value": "0.9"
     },
     {
       "path": "lineHeight.h1",
       "cssVar": "--line-height-h1",
-      "value": "48px"
+      "value": "0.9"
     },
     {
       "path": "lineHeight.h2",
       "cssVar": "--line-height-h2",
-      "value": "40px"
+      "value": "0.9"
     },
     {
       "path": "lineHeight.h3",
       "cssVar": "--line-height-h3",
-      "value": "32px"
+      "value": "0.95"
     },
     {
       "path": "lineHeight.h4",
       "cssVar": "--line-height-h4",
-      "value": "28px"
+      "value": "1.15"
+    },
+    {
+      "path": "lineHeight.lead",
+      "cssVar": "--line-height-lead",
+      "value": "1.5"
     },
     {
       "path": "lineHeight.body",
       "cssVar": "--line-height-body",
-      "value": "24px"
+      "value": "1.6"
     },
     {
       "path": "lineHeight.small",
       "cssVar": "--line-height-small",
-      "value": "20px"
+      "value": "1.5"
+    },
+    {
+      "path": "lineHeight.label",
+      "cssVar": "--line-height-label",
+      "value": "1.2"
     },
     {
       "path": "lineHeight.caption",
       "cssVar": "--line-height-caption",
-      "value": "16px"
+      "value": "1.4"
     },
     {
       "path": "lineHeight.code",
       "cssVar": "--line-height-code",
-      "value": "22px"
+      "value": "1.6"
     },
     {
       "path": "zIndex.base",

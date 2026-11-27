@@ -4,11 +4,14 @@ import { Meta } from "@storybook/blocks";
 
 # Typography
 
-Sora for display and headings. IBM Plex Sans for UI and body. IBM Plex Mono for code and tabular numbers.
+Daybreak v2 has three voices.
 
-- Display 56/64 600 · H1 40/48 600 · H2 32/40 600 · H3 24/32 600 · H4 20/28 500
-- Body 16/24 400 · Small 14/20 · Caption 12/16 · Code 14/22 Mono
+- **Display:** Archivo variable at `font-stretch: 72%`, weight 800, uppercase, line-height 0.9, tracking −0.01em. Load it with `@chamuka/tokens/fonts.css`. Sora is retired.
+- **Body:** IBM Plex Sans 400/500/600 at 16/1.6. Lead is 18→21.
+- **Interface:** IBM Plex Mono 400/500 at 13px, uppercase, tracking 0.08em, for buttons, labels, nav, tabs and numbering.
 
-Titles in ink. Secondary lines in muted. Ember and gold are not paragraph colours. Product names in a lockup are IBM Plex Sans Medium at 0.72 of the wordmark, in the product accent.
+Display scale (fluid): hero 48→92 (one short headline, two lines max), d1 36→60, d2 32→48, d3 24→32, d4 24. Tailwind: `text-hero`, `text-d1` … `text-d4`, `text-lead`, `text-label`.
 
-Measure: 45–75 characters for reading text. Do not letterspace body copy.
+The hero headline is a short phrase ("Applied AI lab."), never a sentence in caps. The full statement goes underneath as a normal-size lead. One loud thing per screen.
+
+Text colours: `--db-fg` for primary text, `--db-fg-2` secondary, `--db-fg-3` meta, `--db-fg-large` for 24px+ only. Small ember text uses `--db-accent-text`. Measure: 60–68ch. Do not letterspace body copy.

@@ -2,7 +2,7 @@
   "name": "@chamuka/tokens",
   "version": "0.1.0",
   "type": "module",
-  "description": "Daybreak design tokens for Chamuka Labs products.",
+  "description": "Daybreak v2 design tokens for Chamuka Labs products: dark default, light paper theme, one accent.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/chamuka-labs/chamuka-design/tree/main/packages/tokens",
   "repository": {
@@ -24,9 +24,15 @@
       "require": "./dist/preset.cjs"
     },
     "./tokens.css": "./dist/tokens.css",
-    "./theme.css": "./dist/theme.css"
+    "./theme.css": "./dist/theme.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./fonts/*": "./dist/fonts/*"
   },
-  "files": ["dist", "src/tokens", "README.md"],
+  "files": [
+    "dist",
+    "src/tokens",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsx src/build.ts && tsup",
     "lint": "eslint .",

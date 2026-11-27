@@ -62,7 +62,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           <Toast
             className={
               item.type === "error"
-                ? "border-destructive/40 bg-destructive text-destructive-foreground"
+                ? "border-primary"
                 : undefined
             }
           >
@@ -91,7 +91,7 @@ export function Toast({
   return (
     <UiToast
       className={cn(
-        "pointer-events-auto relative flex w-full max-w-sm flex-col gap-1 rounded-md border border-border bg-background p-4 shadow-lg",
+        "pointer-events-auto relative flex w-full max-w-sm flex-col gap-1 rounded-lg border border-border-strong bg-card p-4",
         className,
       )}
     >

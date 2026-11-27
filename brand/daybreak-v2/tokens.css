@@ -76,7 +76,6 @@
 
   /* Display scale (fluid). Line-height 0.9, uppercase, tracking -0.01em */
   --db-text-hero: clamp(3rem, 2.1rem + 3.6vw, 5.75rem);   /* 48 -> 92: the one hero headline */
-  --db-text-mega: clamp(3.5rem, 2.2rem + 6.4vw, 9.5rem);  /* 56 -> 152: decorative wordmark only */
   --db-text-d1:   clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem); /* 36 -> 60: section headings */
   --db-text-d2:   clamp(2rem, 1.6rem + 1.6vw, 3rem);      /* 32 -> 48 */
   --db-text-d3:   clamp(1.5rem, 1.3rem + 0.8vw, 2rem);   /* 24 -> 32 */
@@ -148,7 +147,7 @@
   --db-fg-2: var(--db-stone);        /*  6.8 · 6.4 · 6.0 */
   --db-fg-3: var(--db-dust);         /*  5.3 · 5.0 · 4.7 */
   --db-fg-large: var(--db-ash);      /*  4.2 · 4.0 — 24px+ only */
-  --db-accent: var(--db-ember);      /* fills, rules, wordmark */
+  --db-accent: var(--db-ember);      /* fills, rules */
   --db-accent-hover: var(--db-ember-hi);
   --db-accent-press: var(--db-ember);
   --db-on-accent: var(--db-on-ember);/* 4.8 on ember · 6.2 on hover */
@@ -181,7 +180,7 @@
     --db-fg-2: var(--db-ink-2);         /*  7.5 · 8.2 · 6.9 */
     --db-fg-3: var(--db-ink-3);         /*  6.2 · 6.7 · 5.7 */
     --db-fg-large: var(--db-ink-4);     /*  4.0 · 4.3 — 24px+ only */
-    --db-accent: var(--db-ember);       /* fills, rules, wordmark: 3.3 on paper = non-text/large only */
+    --db-accent: var(--db-ember);       /* fills, rules: 3.3 on paper = non-text/large only */
     --db-accent-hover: var(--db-ember-hi);
     --db-accent-press: var(--db-ember);
     --db-on-accent: var(--db-on-ember); /* ink on ember 4.8 · on hover 6.2 */

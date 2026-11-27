@@ -12,6 +12,10 @@ Source of truth for the inventory: [`src/catalog.ts`](./src/catalog.ts) (generat
 
 If UI SDK cannot do a component well (missing primitive, a11y gap, SSR/React 19 bug), keep or restore Radix and set `behaviour: "radix"` plus `behaviourReason` in `catalog.ts`.
 
+## Daybreak v2 look
+
+Use roles, not raw colours: `bg-background`/`bg-card`/`bg-raised`, `text-foreground`/`text-muted-foreground`, `border-border`/`border-border-strong`, `text-accent-text` for small ember text. Primary is `bg-primary text-primary-foreground` (ember with ink text). Controls are `font-mono` 13px uppercase with `tracking-[0.08em]`; titles are `font-display font-extrabold uppercase [font-stretch:72%]`. Radii: `rounded-md` (2px) for controls, `rounded-lg` (4px) for panels. Focus is `focusRing` from `lib/classes.ts` (2px outline). **Never** add `shadow-*`, side/accent borders (`border-l-4`, coloured top strips) or `rounded-xl`; `src/daybreak-v2.test.tsx` fails if you do. Status is an 8px signal dot plus the edge, not a tinted fill.
+
 ## Extending vs restyling
 
 - Restyle: edit Tailwind classes in the wrapper. Keep `cn` + `cva`. Target `data-open`, `data-checked`, `data-selected`, `data-highlighted` from UI SDK — not `data-[state=open]` unless the wrapper still uses Radix.

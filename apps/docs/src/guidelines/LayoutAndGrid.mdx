@@ -4,17 +4,21 @@ import { Meta } from "@storybook/blocks";
 
 # Layout and grid
 
-Product UI sits on morning paper (`--background`) with a max reading width of **72rem** (`Container` size `lg`). Forms and settings use `md` (56rem). Dialogs stay at 480px.
+## Structure from hairlines, not shadows
+
+- Every box, card, panel and image frame gets the same 1px border on all four sides: `--db-border`, `--db-border-strong` or `--db-border-hover`.
+- **No side or accent borders.** No thick left bars, no coloured top strips.
+- To emphasise one item, turn its whole 1px edge ember. Nothing else changes.
+- **No shadows of any kind.** Depth comes from fill steps: bg → surface → raised.
+- Radii: 2px for buttons, inputs and chips; 4px for panels, cards and dialogs. Nothing rounder except status dots.
 
 ## Page frame
 
-- **Header** 64px, lockup on the left (master or Chamuka + Name), utilities on the right.
-- **Body** 16px / 24px IBM Plex Sans.
-- **Margins** 16px on small screens, 24–32px from `md`.
-- **Grid** CSS grid, 12 columns on desktop, 4 on mobile. Gutters follow the spacing scale (16 / 24).
-
-Do not stretch the mark to fill a hero. Do not invent a second banner style — use the templates in `/templates`.
+- Container 1200px (`max-w-daybreak` / `--db-container`), gutter 20–32px, 12 columns. Text measure 60–68ch.
+- Section gap `clamp(96px, 8vw + 48px, 192px)` (`--db-section`).
+- The section pattern is the **ledger**: a 5/7 split, mono number and label on the left, a framed panel with the artefact on the right. It stacks on mobile, label first.
+- Footer is quiet: the mark, the licence line and links on the grid, a 1px ember rule above. No big wordmark, no marquee.
 
 ## Stacking
 
-Use `Stack` for vertical rhythm. Default gap is `--spacing-4` (16px) between related items, `--spacing-6` (24px) between sections, `--spacing-8` (32px) between page blocks.
+Use `Stack` for vertical rhythm on the 4px base: 16px between related items, 24px between groups, 32–48px between blocks.

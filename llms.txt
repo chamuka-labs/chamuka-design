@@ -22,11 +22,18 @@ The GitHub repository is https://github.com/chamuka-labs/chamuka-design (formerl
 
 ## Packages
 
-- `@chamuka/tokens` — DTCG JSON → CSS variables, Tailwind v4 `@theme`, v3 preset
-- `@chamuka/ui` — React 19 components (Tailwind look, UI SDK behaviour)
+- `@chamuka/tokens` — Daybreak v2: DTCG JSON → `--db-*` palette and roles (dark default, light "paper" via `data-theme` / `prefers-color-scheme`), deprecated shadcn/v1 aliases, Tailwind v4 `@theme inline`, v3 preset, Archivo `fonts.css`
+- `@chamuka/ui` — React 19 components (Tailwind look, UI SDK behaviour): ember as the only accent with ink text, mono uppercase controls, 1px hairlines, 2px/4px radii, focus outlines, no shadows
 - `@chamuka/icons` — Daybreak mark and lockups
 
 Install from GitHub Packages (`npm.pkg.github.com`), scope `@chamuka`. Copy `.npmrc.example`. Public npm can come later.
+
+## Design rules (Daybreak v2)
+
+- Spec: https://github.com/chamuka-labs/chamuka-design/blob/main/brand/daybreak-v2/SPEC.md · reference: https://chamuka-labs.github.io/
+- One accent: ember #E24E1B. Text on ember is ink #12100E. Small ember text on paper is #A8340E.
+- Archivo condensed uppercase display, IBM Plex Sans body, IBM Plex Mono 13px uppercase labels.
+- No shadows, no side/accent borders, no gradients, no pure white or black. Focus: 2px outline, #F06A3A dark / #A8340E light.
 
 ## Optional
 

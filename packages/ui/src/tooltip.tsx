@@ -66,7 +66,7 @@ export function TooltipContent({
     <UiTooltipContent
       sideOffset={6}
       className={cn(
-        "z-tooltip overflow-hidden rounded-md bg-ink px-3 py-1.5 text-xs text-paper shadow-md",
+        "z-tooltip overflow-hidden rounded-md border border-border-strong bg-raised px-3 py-1.5 text-xs text-foreground",
         className,
       )}
       {...props}

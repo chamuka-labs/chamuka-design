@@ -3,11 +3,11 @@
   "name": "link",
   "type": "registry:ui",
   "title": "Link",
-  "description": "Text link in primary (ember).",
+  "description": "Text link: foreground text with a 1px underline that turns ember on hover.",
   "meta": {
     "behaviour": "plain",
     "behaviourReason": "Presentational.",
-    "a11y": "Focus-visible ring. Use asChild to render a router Link.",
+    "a11y": "Focus-visible 2px outline. Use asChild to render a router Link.",
     "example": "<Link href=\"https://chamuka.ai\">chamuka.ai</Link>"
   },
   "dependencies": [],
@@ -19,7 +19,7 @@
       "path": "packages/ui/src/link.tsx",
       "type": "registry:ui",
       "target": "@ui/link.tsx",
-      "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { type AnchorHTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { focusRing } from \"@/lib/classes\";\n\nexport type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {\n  asChild?: boolean;\n};\n\nexport const Link = forwardRef<HTMLAnchorElement, LinkProps>(\n  ({ className, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : \"a\";\n    return (\n      <Comp\n        ref={ref}\n        className={cn(\n          \"font-medium text-primary underline-offset-4 hover:underline\",\n          \"motion-reduce:transition-none\",\n          focusRing,\n          className,\n        )}\n        {...props}\n      />\n    );\n  },\n);\nLink.displayName = \"Link\";\n"
+      "content": "import { Slot } from \"@radix-ui/react-slot\";\nimport { type AnchorHTMLAttributes, forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { focusRing } from \"@/lib/classes\";\n\nexport type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {\n  asChild?: boolean;\n};\n\nexport const Link = forwardRef<HTMLAnchorElement, LinkProps>(\n  ({ className, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : \"a\";\n    return (\n      <Comp\n        ref={ref}\n        className={cn(\n          \"text-foreground underline decoration-border-hover decoration-1 underline-offset-[3px] transition-colors hover:decoration-primary\",\n          \"motion-reduce:transition-none\",\n          focusRing,\n          className,\n        )}\n        {...props}\n      />\n    );\n  },\n);\nLink.displayName = \"Link\";\n"
     }
   ]
 }

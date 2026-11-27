@@ -53,7 +53,7 @@ export function RadioGroupItem({ className, value, disabled, id, ...props }: Rad
       value={value}
       disabled={disabled}
       className={cn(
-        "aspect-square size-4 rounded-full border border-input bg-background",
+        "aspect-square size-4 rounded-full border border-input bg-raised",
         "data-checked:border-primary",
         "motion-reduce:transition-none",
         focusRing,

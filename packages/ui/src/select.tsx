@@ -75,7 +75,7 @@ export function SelectTrigger({
   return (
     <UiSelectTrigger
       className={cn(
-        "flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-base",
+        "flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-raised px-3 py-2 text-base hover:border-border-hover",
         "data-placeholder:text-muted-foreground",
         "motion-reduce:transition-none",
         focusRing,
