@@ -1,6 +1,6 @@
 # Daybreak v2
 
-Status: approved for web surfaces (chamuka-labs.github.io). Packages (@chamuka/tokens, @chamuka/ui) still ship v1; migration is a follow-up. Two themes: dark (default) and light "paper".
+Status: approved for web surfaces (chamuka-labs.github.io). `@chamuka/tokens` and `@chamuka/ui` implement v2 (see "Packages" below). Two themes: dark (default) and light "paper".
 Supersedes Daybreak v1 (`../daybreak/`) for web surfaces once approved. The mark is unchanged.
 
 ## Why v2
@@ -11,12 +11,12 @@ v2 keeps the identity and changes the posture. We studied centralhq.com for post
 
 - **One loud thing per screen.** Huge, condensed, uppercase display type (100–152px, line-height 0.9) does the work that colour and decoration did in v1.
 - **A dark, warm ground.** A near-black with a brown cast and cream text, never pure white. It reads as considered rather than "dark mode".
-- **One hot accent, used sparingly.** A single saturated red appears on the primary CTA, the numbered section labels and the footer wordmark. Nothing else is coloured.
+- **One hot accent, used sparingly.** A single saturated red appears on the primary CTA, the numbered section labels and hairline rules. Nothing else is coloured.
 - **Mono as the voice of the interface.** Nav, buttons, labels and numbering are set in small, tracked, uppercase mono. That gives an instrument-panel feel.
 - **Structure from hairlines, not shadows.** 1px warm-grey borders, near-square corners (2–4px), panels in a barely lighter ground, and a faint grain or hatch texture inside panels.
 - **Big vertical rhythm.** 150–200px between sections, a 1100–1200px container, and a two-column "label left, artefact right" section pattern.
 - **Real artefacts as imagery.** Product UI and diagrams sit inside framed panels. There are no 3D blobs.
-- **Restraint in motion.** Hover changes edges and colour, and there's a marquee wordmark at the foot of the page. Nothing bounces.
+- **Restraint in motion.** Hover changes edges and colour. Nothing bounces, and nothing moves on its own.
 
 v2 applies those principles to Chamuka Labs. It's founder-led, short, specific and slightly dry. The bold type carries the confidence, so the copy never has to.
 
@@ -45,7 +45,7 @@ v2 applies those principles to Chamuka Labs. It's founder-led, short, specific a
 
 | Token | Hex | Use |
 |---|---|---|
-| `--db-ember` | #E24E1B | Primary button fill, section numbers, rules, wordmark |
+| `--db-ember` | #E24E1B | Primary button fill, section numbers, rules |
 | `--db-ember-hi` | #F06A3A | Ember text on raised surfaces, hover fill, focus ring |
 | `--db-ember-lo` | #B8380F | Ember text on paper (4.9:1). Not a fill: ink on it is 3.3:1. |
 | `--db-on-ember` | #12100E | Text on ember (4.8:1). Cream on ember fails (3.3:1). |
@@ -68,7 +68,7 @@ Paper #F2EAD9 with ink #12100E is for print, OG cards and the occasional inverse
 
 Sora is retired from web headings: at large sizes its geometric round forms read soft. Archivo's width axis gives a condensed grotesk close in spirit to the American Grotesk Condensed or Söhne pairing on the reference site, as one 90KB file with no licence cost. Plex stays for continuity with the v1 packages.
 
-Display scale (fluid): hero 48→92 (one short headline, two lines max), d1 36→60 (section headings), d2 32→48, d3 24→32, d4 24. Mega 56→152 is for the decorative footer wordmark only, never for a headline. Body: hero lead 20→22, lead 18→21, body 16, small 15, label 13, micro 12.
+Display scale (fluid): hero 48→92 (one short headline, two lines max), d1 36→60 (section headings), d2 32→48, d3 24→32, d4 24. Body: hero lead 20→22, lead 18→21, body 16, small 15, label 13, micro 12.
 
 Restraint: the hero headline is a short phrase ("Applied AI lab."), never a full sentence in caps. The full statement goes underneath as a normal-size lead.
 
@@ -115,7 +115,7 @@ Focus uses `outline: 2px solid var(--db-focus)` with a 2px offset. It's an outli
 - **Badge.** Mono 12px uppercase, a 1px ember edge, ember-hi text, 2px radius. Use it for states such as "Coming soon as open source".
 - **Facet list.** d4 condensed uppercase in ash with 1.15 leading. It's a scannable list of what a thing does.
 - **Rule.** A 1px line, or a 2px ember rule 48px long above a section label.
-- **Marquee wordmark.** The footer's display mega text in ember scrolls at 40s per loop. It's static under reduced motion and `aria-hidden` (the real name sits in the footer text).
+- **Footer.** Quiet: the mark, the licence line, contact and elsewhere links on the grid, a 1px ember rule above, even padding. No big display wordmark and no marquee.
 - **Code.** Plex Mono at 0.9em on ground-3 with 2px radius.
 
 ## Imagery
@@ -132,7 +132,7 @@ Focus uses `outline: 2px solid var(--db-focus)` with a 2px offset. It's an outli
 
 ## Motion
 
-Use only 120ms, 220ms or 480ms, eased with `cubic-bezier(0.2, 0.7, 0.1, 1)`. Animate colour, edge and a ≤4px translate. Nothing animates on load except the marquee. `prefers-reduced-motion: reduce` zeroes the durations and stops the marquee.
+Use only 120ms, 220ms or 480ms, eased with `cubic-bezier(0.2, 0.7, 0.1, 1)`. Animate colour, edge and a ≤4px translate. Nothing animates on load. `prefers-reduced-motion: reduce` zeroes the durations.
 
 ## Light theme ("paper")
 
@@ -168,12 +168,12 @@ Components must use semantic roles only, never raw palette values. The exception
 | `--db-fg-large` (24px+ only) | #7A7163 | 4.02 | 4.34 | 3.67 (AA large) |
 | `--db-accent-text` (ember as small text) | #A8340E | 5.55 | 6.00 | 5.07 |
 | `--db-accent-text-hover` | #9C2F0C | 6.21 | 6.72 | 5.67 |
-| `--db-accent` (fills, rules, wordmark) | #E24E1B | 3.29: non-text and 24px+ only | n/a | n/a |
+| `--db-accent` (fills, rules) | #E24E1B | 3.29: non-text and 24px+ only | n/a | n/a |
 
 ### Ember on light
 
 - **Fills stay true #E24E1B.** Button text on ember is ink #12100E at **4.83:1**, and on the hover fill #F06A3A it's **6.17:1**. These are the same pairs as dark. Cream on ember (3.29) and white on ember (3.93) both fail, so they're never used.
-- **Small ember text darkens.** True ember on paper is only 3.29:1, so small ember text uses `--db-accent-text` #A8340E, a darker ember at 5.55:1. True ember stays for fills, 2px rules, the 8px dot, badge borders and the footer wordmark, which is decorative, 80px+ and `aria-hidden`.
+- **Small ember text darkens.** True ember on paper is only 3.29:1, so small ember text uses `--db-accent-text` #A8340E, a darker ember at 5.55:1. True ember stays for fills, 2px rules, the 8px dot, and badge borders.
 - **Pressed state.** In v2 dark, the pressed fill was #B8380F, where ink measured 3.26:1. That was a fail, and it's now fixed in both themes: `--db-accent-press` is #E24E1B.
 - **Focus.** On light it's a 2px #A8340E outline with a 2px offset (5.6:1 against paper). On dark it's #F06A3A.
 
@@ -210,7 +210,7 @@ The v1 originals return because they were designed for paper: slate #2B4C7E (7.2
 ## Do
 
 - Let one headline dominate each screen.
-- Use ember only for the primary CTA, section numbers and the footer wordmark.
+- Use ember only for the primary CTA, section numbers and rules.
 - Frame real diagrams and artefacts in panels.
 - Write short, specific, slightly dry copy. Name the boundary.
 - Keep corners near square and edges hairline.
@@ -232,6 +232,6 @@ The v1 originals return because they were designed for paper: slate #2B4C7E (7.2
 - `fonts/archivo-latin-wdth-normal.woff2` and `fonts/archivo-OFL.txt`: from @fontsource-variable/archivo 5.3.0.
 - Plex woff2 files are shipped by the site already (`fonts/files/`).
 
-## Open questions
+## Packages
 
-- Should `packages/tokens` (@chamuka/tokens) adopt `--db-*` or map v2 onto the existing shadcn names? The site maps to its own names for now.
+`@chamuka/tokens` ships these tokens as `--db-*` (raw palette and roles, generated from DTCG JSON and tested for parity with this folder's `tokens.css`). shadcn names (`--background`, `--primary`, `--ring` …) and v1 names (`--ember`, `--paper`, `--muted` …) are kept as deprecated aliases mapped onto the roles, so v1 consumers keep working. `@chamuka/ui` components use the roles: hairline edges, 2px/4px radii, mono uppercase controls, focus outlines and no shadows.

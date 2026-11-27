@@ -14,7 +14,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       <Comp
         ref={ref}
         className={cn(
-          "font-medium text-primary underline-offset-4 hover:underline",
+          "text-foreground underline decoration-border-hover decoration-1 underline-offset-[3px] transition-colors hover:decoration-primary",
           "motion-reduce:transition-none",
           focusRing,
           className,

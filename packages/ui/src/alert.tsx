@@ -2,14 +2,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { type HTMLAttributes, forwardRef, type ReactNode } from "react";
 import { cn } from "./lib/cn";
 
-const alertVariants = cva("relative w-full rounded-lg border p-4", {
+/** Status is an 8px signal dot plus the edge; never a tinted fill or a side bar. */
+const dot =
+  "pl-9 before:absolute before:left-4 before:top-[1.3rem] before:size-2 before:rounded-full before:content-['']";
+
+const alertVariants = cva("relative w-full rounded-lg border bg-card p-4 text-card-foreground", {
   variants: {
     variant: {
-      default: "border-border bg-card text-card-foreground",
-      success: "border-success/30 bg-success/10 text-foreground",
-      warning: "border-warning/40 bg-warning/15 text-foreground",
-      danger: "border-destructive/30 bg-destructive/10 text-foreground",
-      info: "border-info/30 bg-info/10 text-foreground",
+      default: "border-border",
+      success: `border-border-strong ${dot} before:bg-sig-forest`,
+      warning: `border-border-strong ${dot} before:bg-sig-gold`,
+      danger: `border-primary ${dot} before:bg-primary`,
+      info: `border-border-strong ${dot} before:bg-sig-slate`,
     },
   },
   defaultVariants: { variant: "default" },
@@ -29,7 +33,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
       {...props}
     >
       <div className="grid gap-1">
-        {title ? <p className="font-display text-sm font-medium">{title}</p> : null}
+        {title ? <p className="font-mono text-[0.8125rem] font-medium uppercase tracking-[0.08em]">{title}</p> : null}
         {children ? <div className="text-sm text-muted-foreground">{children}</div> : null}
       </div>
     </div>

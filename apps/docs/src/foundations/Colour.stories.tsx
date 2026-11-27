@@ -1,63 +1,77 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { color, semantic } from "@chamuka/tokens";
+import { palette, roles } from "@chamuka/tokens";
 
 const meta: Meta = {
   title: "Foundations/Colour",
 };
 export default meta;
 
-function Swatch({ name, hex }: { name: string; hex: string }) {
+function Swatch({
+  name,
+  value,
+  cssVar,
+}: {
+  name: string;
+  value: string;
+  cssVar?: string;
+}) {
   return (
     <div className="sb-swatch">
-      <div className="sb-swatch-chip" style={{ background: hex }} />
+      <div
+        className="sb-swatch-chip"
+        style={{ background: cssVar ? `var(${cssVar})` : value }}
+      />
       <div className="sb-swatch-meta">
         <strong>{name}</strong>
-        <div>{hex}</div>
+        <div>{value}</div>
       </div>
     </div>
   );
 }
 
-export const Core: StoryObj = {
+const kebab = (s: string) => s.replace(/([a-z])([A-Z0-9])/g, "$1-$2").toLowerCase();
+const isColour = (v: string) => v.startsWith("#");
+
+/** The live roles for the theme selected in the toolbar. Components only use these. */
+export const Roles: StoryObj = {
+  render: () => (
+    <div className="grid gap-4">
+      <p className="sb-label">Live roles · switch Theme in the toolbar</p>
+      <div className="sb-swatch-grid">
+        {Object.entries(roles.dark)
+          .filter(([, v]) => isColour(v))
+          .map(([name]) => (
+            <Swatch
+              key={name}
+              name={`--db-${kebab(name)}`}
+              value={`${roles.dark[name as keyof typeof roles.dark]} / ${roles.light[name as keyof typeof roles.light]}`}
+              cssVar={`--db-${kebab(name)}`}
+            />
+          ))}
+      </div>
+    </div>
+  ),
+};
+
+/** Ember is the only accent. Signal colours are for diagrams and status dots only. */
+export const Accent: StoryObj = {
   render: () => (
     <div className="sb-swatch-grid">
-      {(["ember", "gold", "slate", "paper", "mist", "ink", "muted"] as const).map((name) => (
-        <Swatch key={name} name={name} hex={color[name]} />
+      {(
+        ["ember", "emberHi", "emberLo", "onEmber", "emberInk", "emberInkHi"] as const
+      ).map((name) => (
+        <Swatch key={name} name={`--db-${kebab(name)}`} value={palette[name]} />
       ))}
     </div>
   ),
 };
 
-export const Semantic: StoryObj = {
+export const Palette: StoryObj = {
   render: () => (
     <div className="sb-swatch-grid">
-      {(["success", "warning", "danger", "info", "play", "forest", "mineral"] as const).map(
-        (name) => (
-          <Swatch key={name} name={name} hex={color[name]} />
-        ),
-      )}
-    </div>
-  ),
-};
-
-export const NeutralRamp: StoryObj = {
-  render: () => (
-    <div className="sb-swatch-grid">
-      {Object.entries(color.neutral).map(([step, hex]) => (
-        <Swatch key={step} name={`neutral-${step}`} hex={hex} />
+      {Object.entries(palette).map(([name, hex]) => (
+        <Swatch key={name} name={`--db-${kebab(name)}`} value={hex} />
       ))}
-    </div>
-  ),
-};
-
-export const LightTheme: StoryObj = {
-  render: () => (
-    <div className="sb-swatch-grid">
-      {Object.entries(semantic.light)
-        .filter(([key]) => key !== "productAccent")
-        .map(([name, hex]) => (
-          <Swatch key={name} name={name} hex={String(hex)} />
-        ))}
     </div>
   ),
 };

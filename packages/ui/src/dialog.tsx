@@ -66,7 +66,7 @@ export function DialogOverlay({
 }: ComponentPropsWithoutRef<"div">) {
   return (
     <UiDialogBackdrop
-      className={cn("fixed inset-0 z-overlay bg-ink/50 motion-reduce:transition-none", className)}
+      className={cn("fixed inset-0 z-overlay bg-ink/70 motion-reduce:transition-none", className)}
       {...props}
     />
   );
@@ -89,7 +89,7 @@ export function DialogContent({
       <UiDialogContent
         className={cn(
           "fixed left-1/2 top-1/2 z-modal w-full max-w-lg -translate-x-1/2 -translate-y-1/2",
-          "rounded-lg border border-border bg-background p-6 shadow-lg",
+          "rounded-lg border border-border-strong bg-card p-6",
           "motion-reduce:transition-none",
           focusRing,
           className,
@@ -108,7 +108,7 @@ export function DialogTitle({
 }: ComponentPropsWithoutRef<"h2">) {
   return (
     <UiDialogTitle
-      className={cn("font-display text-lg font-semibold leading-none tracking-tight", className)}
+      className={cn("font-display text-2xl font-extrabold uppercase leading-[1.05] tracking-[-0.01em] [font-stretch:72%]", className)}
       {...props}
     />
   );

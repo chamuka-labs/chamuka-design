@@ -6,7 +6,7 @@ import { Meta } from "@storybook/blocks";
 
 Components follow WAI-ARIA APG patterns via Radix. Keyboard: Tab moves focus, Enter/Space activate, Escape closes overlays, arrows move within menus, radios, and tabs.
 
-- Visible **focus-visible** ring using `--ring` (ember / lifted ember).
+- Visible **focus-visible** outline: 2px solid `--ring` (`--db-focus`), 2px offset. `#F06A3A` on dark, `#A8340E` on light. An outline, never a shadow.
 - Icon-only controls require an accessible name (`IconButton` `label`).
 - Every checkbox, radio, and switch has a `Label`.
 - Errors are `role="alert"` and referenced from the control with `aria-describedby`.

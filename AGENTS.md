@@ -35,10 +35,11 @@ Components are styled with Tailwind utility classes (`bg-primary`, `text-muted-f
 @import "tailwindcss";
 @import "@chamuka/tokens/tokens.css";
 @import "@chamuka/tokens/theme.css";
+@import "@chamuka/tokens/fonts.css"; /* Archivo display face; load IBM Plex Sans/Mono via @fontsource */
 @source "../node_modules/@chamuka/ui/dist/**/*.js";
 ```
 
-`theme.css` maps `--primary` onto `--color-primary` so `bg-primary` / `text-muted-foreground` resolve. Core `--muted` is Daybreak muted **ink**. The muted **surface** is `--muted-bg`; Tailwind `muted` uses that.
+`theme.css` is `@theme inline`, so utilities reference the variables directly and follow nested `data-theme` scopes. It exposes the v2 roles (`bg-bg`, `bg-surface`, `bg-raised`, `border-border-strong`, `text-fg-2`, `text-accent-text`, `outline-focus`, `bg-sig-forest` …) and the shadcn names (`bg-primary`, `text-muted-foreground`, `bg-accent` = hover surface). Tailwind's shadow utilities are removed and radii are capped at 4px. Type: `text-hero`, `text-d1`…`text-d4`, `text-lead`, `text-label`, `font-display` (use with `font-extrabold uppercase [font-stretch:72%]`).
 
 If you cannot `@source` the package, import the compiled fallback instead of scanning:
 
@@ -57,8 +58,7 @@ import chamuka from "@chamuka/tokens/preset";
 export default {
   presets: [chamuka],
   content: ["./src/**/*.{ts,tsx}", "./node_modules/@chamuka/ui/dist/**/*.js"],
-  darkMode: ["class"],
-} satisfies Config;
+} satisfies Config; // the preset sets darkMode to [data-theme="dark"]; colours are variables, so no dark: variants are needed
 ```
 
 ```ts
@@ -113,11 +113,20 @@ import { ThemeProvider, ToastProvider, TooltipProvider } from "@chamuka/ui";
 </ThemeProvider>
 ```
 
-Light tokens sit on `:root`. Dark overrides apply to `.dark` and `[data-theme="dark"]`. Ember `#E24E1B` on paper is 3.74:1 — AA **large** only. Do not use ember for small body text.
+Daybreak v2 (`brand/daybreak-v2/SPEC.md`) — the live reference is https://chamuka-labs.github.io/.
+
+- **Themes.** Dark (warm near-black `#12100E`, cream text) is the default. Light "paper" (`#F2EAD9`, ink text) swaps roles only. No attribute follows `prefers-color-scheme`; `data-theme="dark|light"` (or `.dark` / `.light`) on `<html>` or any element forces it for that subtree.
+- **Tokens.** Raw palette `--db-*` (never themed) → roles `--db-bg`, `--db-surface`, `--db-raised`, `--db-border`, `--db-border-strong`, `--db-border-hover`, `--db-fg`, `--db-fg-2`, `--db-fg-3`, `--db-fg-large`, `--db-accent`, `--db-accent-hover`, `--db-accent-press`, `--db-on-accent`, `--db-accent-text`, `--db-accent-text-hover`, `--db-sig-*`, `--db-focus`. Components use roles only.
+- **Compatibility.** shadcn names (`--background`, `--primary`, `--ring` …) are mapped onto roles. v1 names (`--ember`, `--paper`, `--ink`, `--mist`, `--muted`, `--success`, `--neutral-*`, `--accent-drawit` …) still resolve but are **deprecated**; `--shadow-*` are `none`.
+- **Ember `#E24E1B` is the only accent**: primary fill, section numbers, rules, the emphasised item's 1px edge. Text on ember is ink, never cream or white. Small ember text uses `--db-accent-text` (`#A8340E` on paper).
+- **Type.** Archivo condensed (72%, 800, uppercase) for display; IBM Plex Sans for body; IBM Plex Mono 13px uppercase, 0.08em tracking for buttons, labels, tabs and nav. Sora is retired.
+- **Structure.** Uniform 1px hairlines; 2px radius on controls, 4px on panels. **No shadows of any kind. No side or accent borders** (no thick left bars, no coloured top strips).
+- **Focus.** 2px outline, 2px offset: `#F06A3A` on dark, `#A8340E` on light. Never a box-shadow ring.
+- Signal colours (gold, slate, mineral, forest, coral) are for diagrams and 8px status dots only.
 
 ## Brand
 
-Logo masters live in `/brand`. The Daybreak v2 web spec (dark and light themes, no shadows, hairline borders) is in `brand/daybreak-v2/SPEC.md`. The packages still ship v1 tokens until the migration lands. In product UI use `@chamuka/icons` (`Mark`, `LockupHorizontal`, …). Do not recolour the sun, horizon, or gold bar. Product chrome icons: Lucide, 1.5–2px, `currentColor`.
+Logo masters live in `/brand`. The Daybreak v2 spec (dark and light themes, no shadows, hairline borders, quiet footer) is in `brand/daybreak-v2/SPEC.md`; `@chamuka/tokens` is generated to match its `tokens.css` and a test guards parity. In product UI use `@chamuka/icons` (`Mark`, `LockupHorizontal`, …). Do not recolour the sun, horizon, or gold bar. Product chrome icons: Lucide, 1.5–2px, `currentColor`.
 
 ## Commands
 

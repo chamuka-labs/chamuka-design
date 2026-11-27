@@ -44,7 +44,7 @@ export function Checkbox({
           : undefined
       }
       className={cn(
-        "peer size-4 shrink-0 rounded-sm border border-input bg-background",
+        "peer size-4 shrink-0 rounded-sm border border-input bg-raised",
         "data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground",
         "motion-reduce:transition-none",
         focusRing,

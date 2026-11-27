@@ -1,0 +1,24 @@
+{
+  "color": {
+    "$type": "color",
+    "white": {
+      "$value": "#FFFFFF",
+      "$deprecated": "Daybreak v2 never uses pure white. Use --db-fg / --db-paper-2."
+    },
+    "neutral": {
+      "$description": "v1 warm neutral ramp. Kept for compatibility; v2 surfaces use roles (--db-bg, --db-surface, --db-raised, --db-border*).",
+      "$deprecated": "Use Daybreak v2 roles.",
+      "50": { "$value": "#FBF7F2", "$deprecated": true },
+      "100": { "$value": "#F3EBE0", "$deprecated": true },
+      "200": { "$value": "#E6D9C8", "$deprecated": true },
+      "300": { "$value": "#D0C0AA", "$deprecated": true },
+      "400": { "$value": "#B3A28A", "$deprecated": true },
+      "500": { "$value": "#8F8170", "$deprecated": true },
+      "600": { "$value": "#6B645C", "$deprecated": true },
+      "700": { "$value": "#524C46", "$deprecated": true },
+      "800": { "$value": "#3A3531", "$deprecated": true },
+      "900": { "$value": "#241F1C", "$deprecated": true },
+      "950": { "$value": "#17141C", "$deprecated": true }
+    }
+  }
+}

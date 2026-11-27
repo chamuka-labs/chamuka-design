@@ -14,8 +14,8 @@ export const Variants: StoryObj<typeof Alert> = {
       <Alert variant="success" title="Connected">
         Waypoint is reachable.
       </Alert>
-      <Alert variant="warning" title="On ink">
-        Warning colour fails on paper — this band is ink.
+      <Alert variant="warning" title="Quota close">
+        Status shows as a signal dot and the edge. No tinted fills, no side bars.
       </Alert>
       <Alert variant="danger" title="Could not save">
         Check the network and try again.

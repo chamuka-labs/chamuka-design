@@ -1,13 +1,20 @@
 {
   "radius": {
     "$type": "dimension",
-    "sm": { "$value": "4px" },
-    "md": { "$value": "8px" },
-    "lg": { "$value": "12px" },
-    "xl": { "$value": "20px" },
-    "full": { "$value": "9999px" },
+    "$description": "Near-square. 2px for controls, 4px for panels and cards. Nothing rounder except status dots.",
+    "sm": { "$value": "2px" },
+    "md": { "$value": "2px", "$description": "Buttons, inputs, chips." },
+    "lg": { "$value": "4px", "$description": "Panels, cards, dialogs, popovers." },
+    "xl": {
+      "$value": "4px",
+      "$deprecated": "Clamped to 4px. Daybreak v2 has no rounded-xl."
+    },
+    "full": {
+      "$value": "9999px",
+      "$description": "Status dots, radios and spinners only."
+    },
     "default": {
-      "$value": "0.5rem",
+      "$value": "4px",
       "$description": "Shadcn --radius on :root."
     }
   }

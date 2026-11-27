@@ -19,15 +19,16 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
+/** Daybreak v2: dark is the default; "system" follows prefers-color-scheme (dark when unknown). */
 function resolveTheme(theme: Theme): "light" | "dark" {
   if (theme !== "system") return theme;
-  if (typeof window === "undefined") return "light";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") return "dark";
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
 }
 
 export function ThemeProvider({
   children,
-  defaultTheme = "light",
+  defaultTheme = "system",
   className,
 }: {
   children: ReactNode;
@@ -43,7 +44,7 @@ export function ThemeProvider({
     const apply = () => setResolved(resolveTheme(theme));
     apply();
     if (theme !== "system" || typeof window === "undefined") return;
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const mq = window.matchMedia("(prefers-color-scheme: light)");
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);
   }, [theme]);
@@ -62,7 +63,7 @@ export function ThemeProvider({
       <div
         className={cn(
           "min-h-full bg-background font-sans text-base text-foreground antialiased",
-          resolved === "dark" && "dark",
+          resolved === "dark" ? "dark" : "light",
           className,
         )}
         data-theme={resolved}

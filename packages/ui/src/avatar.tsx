@@ -4,7 +4,7 @@ import { forwardRef, type ComponentPropsWithoutRef, type ElementRef } from "reac
 import { cn } from "./lib/cn";
 
 const avatarVariants = cva(
-  "relative flex shrink-0 overflow-hidden rounded-full bg-muted",
+  "relative flex shrink-0 overflow-hidden rounded-md bg-muted",
   {
     variants: {
       size: {

@@ -31,7 +31,7 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "Primary action control. Ember fill; 16px default so ember-on-paper meets AA large.",
+      "description": "Primary action control. Daybreak v2: ember fill with ink text (4.8:1), mono 13px uppercase, 2px radius, no shadow. Secondary/outline use a hairline edge.",
       "files": [
         {
           "path": "packages/ui/src/button.tsx",
@@ -67,7 +67,7 @@
       "name": "link",
       "type": "registry:ui",
       "title": "Link",
-      "description": "Text link in primary (ember).",
+      "description": "Text link: foreground text with a 1px underline that turns ember on hover.",
       "files": [
         {
           "path": "packages/ui/src/link.tsx",
@@ -295,7 +295,7 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
-      "description": "Inline status message.",
+      "description": "Inline status message. Hairline edge on a surface fill; status variants add an 8px signal dot, danger turns the edge ember. No tinted fills or side bars.",
       "files": [
         {
           "path": "packages/ui/src/alert.tsx",
@@ -308,7 +308,7 @@
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
-      "description": "Surface grouping for forms and summaries.",
+      "description": "Surface grouping for forms and summaries. 1px hairline edge, 4px radius, no shadow; CardTitle is condensed uppercase display.",
       "files": [
         {
           "path": "packages/ui/src/card.tsx",
@@ -321,7 +321,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
-      "description": "Small status pill.",
+      "description": "Small mono uppercase label with a 1px edge and 2px radius. Status variants add an 8px signal dot.",
       "files": [
         {
           "path": "packages/ui/src/badge.tsx",
@@ -412,7 +412,7 @@
       "name": "theme-provider",
       "type": "registry:ui",
       "title": "ThemeProvider",
-      "description": "Applies class=dark and data-theme for token overrides.",
+      "description": "Sets data-theme (and .dark/.light) on a wrapper so Daybreak v2 roles resolve. Defaults to system; dark when there is no preference.",
       "files": [
         {
           "path": "packages/ui/src/theme-provider.tsx",

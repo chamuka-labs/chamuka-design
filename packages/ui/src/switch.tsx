@@ -38,8 +38,8 @@ export function Switch({
           : undefined
       }
       className={cn(
-        "peer relative inline-flex h-6 w-[44px] shrink-0 cursor-pointer items-center rounded-full border border-transparent bg-input",
-        "data-checked:bg-primary",
+        "peer relative inline-flex h-6 w-[44px] shrink-0 cursor-pointer items-center rounded-sm border border-input bg-raised",
+        "data-checked:border-primary data-checked:bg-primary",
         "motion-reduce:transition-none",
         focusRing,
         disabledControl,
@@ -49,7 +49,7 @@ export function Switch({
     >
       <SwitchThumb
         className={cn(
-          "pointer-events-none block size-5 rounded-full bg-background shadow-sm ring-0 transition-transform",
+          "pointer-events-none block size-[18px] rounded-[1px] bg-fg-2 transition-transform data-checked:bg-primary-foreground",
           "data-checked:translate-x-5 translate-x-0.5",
           "motion-reduce:transition-none",
         )}

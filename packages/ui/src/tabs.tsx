@@ -46,7 +46,7 @@ export function TabsList({
 }: NativeDivProps) {
   return (
     <UiTabsList
-      className={cn("inline-flex items-center gap-1 rounded-md bg-muted p-1", className)}
+      className={cn("inline-flex items-center gap-1 rounded-md border border-border bg-card p-1", className)}
       {...props}
     />
   );
@@ -61,8 +61,8 @@ export function TabsTrigger({
     <TabsTab
       value={value}
       className={cn(
-        "inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium text-muted-foreground",
-        "data-selected:bg-background data-selected:text-foreground data-selected:shadow-sm",
+        "inline-flex items-center justify-center rounded-sm px-3 py-1.5 font-mono text-[0.8125rem] font-medium uppercase tracking-[0.08em] text-muted-foreground hover:text-foreground",
+        "data-selected:bg-raised data-selected:text-foreground",
         "motion-reduce:transition-none",
         focusRing,
         className,

@@ -2,13 +2,15 @@
   "font": {
     "$type": "fontFamily",
     "display": {
-      "$value": ["Sora", "ui-sans-serif", "system-ui", "sans-serif"]
+      "$value": ["Archivo", "Arial Narrow", "Helvetica Neue", "Arial", "sans-serif"],
+      "$description": "Archivo variable at font-stretch 72%, weight 800, uppercase. Sora is retired."
     },
     "sans": {
       "$value": ["IBM Plex Sans", "ui-sans-serif", "system-ui", "sans-serif"]
     },
     "mono": {
-      "$value": ["IBM Plex Mono", "ui-monospace", "monospace"]
+      "$value": ["IBM Plex Mono", "ui-monospace", "monospace"],
+      "$description": "Interface voice: buttons, labels, nav, numbering. 13px uppercase, tracking 0.08em."
     }
   },
   "fontWeight": {
@@ -16,30 +18,47 @@
     "regular": { "$value": "400" },
     "medium": { "$value": "500" },
     "semibold": { "$value": "600" },
-    "bold": { "$value": "700" }
+    "bold": { "$value": "700" },
+    "display": { "$value": "800", "$description": "Archivo display weight." }
   },
   "fontSize": {
     "$type": "dimension",
-    "display": { "$value": "56px", "$description": "Sora 600 / 64" },
-    "h1": { "$value": "40px" },
-    "h2": { "$value": "32px" },
-    "h3": { "$value": "24px" },
-    "h4": { "$value": "20px" },
+    "display": {
+      "$value": "clamp(3rem, 2.1rem + 3.6vw, 5.75rem)",
+      "$description": "= --db-text-hero. One short headline per screen."
+    },
+    "h1": {
+      "$value": "clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem)",
+      "$description": "= --db-text-d1"
+    },
+    "h2": {
+      "$value": "clamp(2rem, 1.6rem + 1.6vw, 3rem)",
+      "$description": "= --db-text-d2"
+    },
+    "h3": {
+      "$value": "clamp(1.5rem, 1.3rem + 0.8vw, 2rem)",
+      "$description": "= --db-text-d3"
+    },
+    "h4": { "$value": "1.5rem", "$description": "= --db-text-d4" },
+    "lead": { "$value": "clamp(1.125rem, 1rem + 0.4vw, 1.3125rem)" },
     "body": { "$value": "16px" },
-    "small": { "$value": "14px" },
+    "small": { "$value": "15px" },
+    "label": { "$value": "13px", "$description": "Mono uppercase, tracking 0.08em." },
     "caption": { "$value": "12px" },
     "code": { "$value": "14px" }
   },
   "lineHeight": {
     "$type": "number",
-    "display": { "$value": "64px" },
-    "h1": { "$value": "48px" },
-    "h2": { "$value": "40px" },
-    "h3": { "$value": "32px" },
-    "h4": { "$value": "28px" },
-    "body": { "$value": "24px" },
-    "small": { "$value": "20px" },
-    "caption": { "$value": "16px" },
-    "code": { "$value": "22px" }
+    "display": { "$value": "0.9" },
+    "h1": { "$value": "0.9" },
+    "h2": { "$value": "0.9" },
+    "h3": { "$value": "0.95" },
+    "h4": { "$value": "1.15" },
+    "lead": { "$value": "1.5" },
+    "body": { "$value": "1.6" },
+    "small": { "$value": "1.5" },
+    "label": { "$value": "1.2" },
+    "caption": { "$value": "1.4" },
+    "code": { "$value": "1.6" }
   }
 }

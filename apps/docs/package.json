@@ -4,7 +4,7 @@
   "private": true,
   "license": "Apache-2.0",
   "type": "module",
-  "description": "Storybook for the Chamuka Labs Daybreak design system.",
+  "description": "Storybook for the Chamuka Labs Daybreak v2 design system.",
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "echo 'Storybook is built with build-storybook'",
@@ -19,7 +19,6 @@
     "@chamuka/ui": "workspace:*",
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "@fontsource/ibm-plex-sans": "^5.2.8",
-    "@fontsource/sora": "^5.2.8",
     "lucide-react": "^0.552.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

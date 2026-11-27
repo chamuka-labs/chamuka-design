@@ -4,10 +4,16 @@ import { Meta } from "@storybook/blocks";
 
 # Colour and contrast
 
-Ember `#E24E1B` is the master primary. It **fails WCAG AA** for small text on paper (3.74:1) and passes AA large. Use it for buttons, marks, and display — not body copy. Button labels are 16px (14px minimum, medium weight).
+Two themes, one system. **Dark** (warm near-black `#12100E`, cream text) is the default; **light "paper"** (`#F2EAD9`, ink text) is the same system with different roles. With no attribute the theme follows `prefers-color-scheme`; `data-theme="dark|light"` forces it. Use the Theme switch in the toolbar.
 
-Ink on paper is 17.30 AAA. Slate on paper is 8.18 AAA. Muted on paper is 5.54 AA. Gold on paper fails; gold on ink is 9.47 AAA. Success on paper is 4.12 — large text / icons only.
+Components use roles only (`--db-bg`, `--db-surface`, `--db-raised`, `--db-border*`, `--db-fg*`, `--db-accent*`, `--db-focus`). Raw palette values are for specimens.
 
-Dark theme sits on ink. Primary lifts to `#F06A3A`. Accent (links) lifts to `#7FA0D4`. Filled slate may still use `#2B4C7E`.
+**Ember `#E24E1B` is the only accent.** It fills the primary button, numbers sections and draws rules. Text on ember is always ink `#12100E` (4.8:1; 6.2:1 on the hover fill `#F06A3A`). Cream or white on ember fails, so never use them.
 
-Do not invent campaign palettes. Product accents (coral, forest, mineral, ember, slate) colour the name, the app-icon field, and selected controls — never the sun.
+- Small ember text on dark: `#E24E1B` on bg/surface, `#F06A3A` on raised.
+- Small ember text on paper: `--db-accent-text` `#A8340E` (5.6:1). True ember on paper is 3.3:1, so it is for fills, rules, dots and badge edges only.
+- Focus: 2px outline, 2px offset. `#F06A3A` on dark, `#A8340E` on light.
+
+Gold, slate, mineral, forest and coral are **signal** colours: diagrams and 8px status dots only. Never buttons, links or headings.
+
+No gradients, glows, shadows, pure white or pure black.

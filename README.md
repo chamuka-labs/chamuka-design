@@ -61,12 +61,11 @@ npx shadcn@latest add https://raw.githubusercontent.com/chamuka-labs/chamuka-des
 @import "tailwindcss";
 @import "@chamuka/tokens/tokens.css";
 @import "@chamuka/tokens/theme.css";
+@import "@chamuka/tokens/fonts.css";
 @source "../node_modules/@chamuka/ui/dist/**/*.js";
 ```
 
-`tokens.css` defines `:root` and `.dark, [data-theme="dark"]`. `theme.css` maps them onto Tailwind v4 `@theme` so `bg-primary` and `text-muted-foreground` work. If you cannot scan the package, `@import "@chamuka/ui/styles.css"` instead of `@source`.
-
-Core `--muted` is Daybreak muted ink. The muted *surface* is `--muted-bg`.
+The packages implement **Daybreak v2** ([spec](./brand/daybreak-v2/SPEC.md), live reference: https://chamuka-labs.github.io/). Dark is the default; the light "paper" theme follows `prefers-color-scheme` or `data-theme="light"`. `tokens.css` defines the `--db-*` palette and roles plus shadcn and (deprecated) v1 aliases. `theme.css` is a Tailwind v4 `@theme inline` block, so `bg-primary`, `bg-surface` and `text-muted-foreground` work and follow nested themes. If you cannot scan the package, `@import "@chamuka/ui/styles.css"` instead of `@source`.
 
 ### Tailwind v3
 
@@ -80,7 +79,6 @@ export default {
     "./src/**/*.{ts,tsx}",
     "./node_modules/@chamuka/ui/dist/**/*.js",
   ],
-  darkMode: ["class"],
 } satisfies Config;
 ```
 

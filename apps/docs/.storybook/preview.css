@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* Tokens must be in the same Tailwind compilation as the @source scan, or utilities like bg-primary are not generated. */
+@import "@chamuka/tokens/tokens.css";
+@import "@chamuka/tokens/theme.css";
 @source "../../../packages/ui/src/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
@@ -10,8 +13,9 @@ body,
 
 body {
   margin: 0;
-  background: var(--background, #fff8f1);
-  color: var(--foreground, #17141c);
+  background: var(--db-bg, #12100e);
+  color: var(--db-fg, #f2ead9);
+  font-family: var(--db-font-body);
 }
 
 .sb-guide {
@@ -23,7 +27,20 @@ body {
 .sb-guide h1,
 .sb-guide h2,
 .sb-guide h3 {
-  font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--db-font-display);
+  font-stretch: var(--db-display-stretch);
+  font-weight: var(--db-display-weight);
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: var(--db-tracking-display);
+}
+
+.sb-label {
+  font-family: var(--db-font-mono);
+  font-size: var(--db-text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--db-tracking-label);
+  color: var(--db-fg-2);
 }
 
 .sb-swatch-grid {
@@ -34,7 +51,7 @@ body {
 
 .sb-swatch {
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 4px;
   overflow: hidden;
   background: var(--card);
 }

@@ -15,7 +15,7 @@ export const Scale: StoryObj = {
             style={{
               height: 12,
               width: value,
-              background: "var(--ember)",
+              background: "var(--db-accent)",
               borderRadius: 2,
             }}
           />

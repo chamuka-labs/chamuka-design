@@ -2,6 +2,7 @@ import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "nod
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { componentCatalog } from "../packages/ui/src/catalog.ts";
+import { cssName } from "../packages/tokens/src/css-name.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPO = "chamuka-labs/chamuka-design";
@@ -12,6 +13,7 @@ type TokenNode = {
   $value?: unknown;
   $type?: string;
   $description?: string;
+  $deprecated?: unknown;
   [key: string]: unknown;
 };
 
@@ -21,6 +23,7 @@ type FlatToken = {
   value: unknown;
   type?: string;
   description?: string;
+  deprecated?: string | true;
 };
 
 function isToken(node: unknown): node is TokenNode {
@@ -37,6 +40,12 @@ function walk(node: unknown, prefix: string[], acc: FlatToken[]): void {
       value: node.$value,
       type: node.$type,
       description: node.$description,
+      deprecated:
+        node.$deprecated === undefined || node.$deprecated === false
+          ? undefined
+          : node.$deprecated === true
+            ? true
+            : String(node.$deprecated),
     });
     return;
   }
@@ -44,31 +53,6 @@ function walk(node: unknown, prefix: string[], acc: FlatToken[]): void {
     if (key.startsWith("$")) continue;
     walk(child, [...prefix, key], acc);
   }
-}
-
-function cssName(path: string): string {
-  const map: Record<string, string> = {
-    "radius.default": "--radius",
-    "font.display": "--font-display",
-    "font.sans": "--font-sans",
-    "font.mono": "--font-mono",
-  };
-  if (map[path]) return map[path];
-  if (path.startsWith("color.neutral.")) return `--neutral-${path.slice("color.neutral.".length)}`;
-  if (path.startsWith("color.")) return `--${path.slice("color.".length)}`;
-  if (path.startsWith("semantic.light.") || path.startsWith("semantic.dark.")) {
-    return `--${path.split(".").slice(2).join("-")}`;
-  }
-  if (path.startsWith("fontSize.")) return `--font-size-${path.slice("fontSize.".length)}`;
-  if (path.startsWith("lineHeight.")) return `--line-height-${path.slice("lineHeight.".length)}`;
-  if (path.startsWith("fontWeight.")) return `--font-weight-${path.slice("fontWeight.".length)}`;
-  if (path.startsWith("spacing.")) return `--spacing-${path.slice("spacing.".length)}`;
-  if (path.startsWith("radius.")) return `--radius-${path.slice("radius.".length)}`;
-  if (path.startsWith("shadow.")) return `--shadow-${path.slice("shadow.".length)}`;
-  if (path.startsWith("motion.duration.")) return `--duration-${path.slice("motion.duration.".length)}`;
-  if (path.startsWith("motion.easing.")) return `--easing-${path.slice("motion.easing.".length)}`;
-  if (path.startsWith("zIndex.")) return `--z-${path.slice("zIndex.".length)}`;
-  return `--${path.replaceAll(".", "-")}`;
 }
 
 function loadTokens(): FlatToken[] {
@@ -135,6 +119,7 @@ function main() {
       value: token.value,
       type: token.type,
       description: token.description,
+      deprecated: token.deprecated,
     })),
   };
   const rootManifest = {

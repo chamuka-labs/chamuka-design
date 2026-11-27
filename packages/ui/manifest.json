@@ -13,7 +13,7 @@
         "from": "@chamuka/ui"
       },
       "file": "packages/ui/src/button.tsx",
-      "description": "Primary action control. Ember fill; 16px default so ember-on-paper meets AA large.",
+      "description": "Primary action control. Daybreak v2: ember fill with ink text (4.8:1), mono 13px uppercase, 2px radius, no shadow. Secondary/outline use a hairline edge.",
       "behaviour": "plain",
       "behaviourReason": "Presentational. Uses Radix Slot only for asChild.",
       "variants": {
@@ -35,7 +35,7 @@
         ]
       },
       "props": [],
-      "a11y": "Focus-visible ring. Disabled is pointer-events-none + opacity. Ember labels stay at 14px minimum, medium weight.",
+      "a11y": "Focus-visible 2px outline (--ring, 2px offset). Disabled is pointer-events-none + opacity. Text on ember is always ink, never cream or white.",
       "example": "<Button>Save</Button>",
       "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/button.json"
     },
@@ -68,12 +68,12 @@
         "from": "@chamuka/ui"
       },
       "file": "packages/ui/src/link.tsx",
-      "description": "Text link in primary (ember).",
+      "description": "Text link: foreground text with a 1px underline that turns ember on hover.",
       "behaviour": "plain",
       "behaviourReason": "Presentational.",
       "variants": {},
       "props": [],
-      "a11y": "Focus-visible ring. Use asChild to render a router Link.",
+      "a11y": "Focus-visible 2px outline. Use asChild to render a router Link.",
       "example": "<Link href=\"https://chamuka.ai\">chamuka.ai</Link>",
       "registry": "https://raw.githubusercontent.com/chamuka-labs/chamuka-design/main/registry/link.json"
     },
@@ -423,7 +423,7 @@
         "from": "@chamuka/ui"
       },
       "file": "packages/ui/src/alert.tsx",
-      "description": "Inline status message.",
+      "description": "Inline status message. Hairline edge on a surface fill; status variants add an 8px signal dot, danger turns the edge ember. No tinted fills or side bars.",
       "behaviour": "plain",
       "behaviourReason": "Presentational. role=status.",
       "variants": {
@@ -455,7 +455,7 @@
         "from": "@chamuka/ui"
       },
       "file": "packages/ui/src/card.tsx",
-      "description": "Surface grouping for forms and summaries.",
+      "description": "Surface grouping for forms and summaries. 1px hairline edge, 4px radius, no shadow; CardTitle is condensed uppercase display.",
       "behaviour": "plain",
       "behaviourReason": "Presentational.",
       "variants": {},
@@ -475,7 +475,7 @@
         "from": "@chamuka/ui"
       },
       "file": "packages/ui/src/badge.tsx",
-      "description": "Small status pill.",
+      "description": "Small mono uppercase label with a 1px edge and 2px radius. Status variants add an 8px signal dot.",
       "behaviour": "plain",
       "behaviourReason": "Presentational.",
       "variants": {
@@ -641,7 +641,7 @@
         "from": "@chamuka/ui"
       },
       "file": "packages/ui/src/theme-provider.tsx",
-      "description": "Applies class=dark and data-theme for token overrides.",
+      "description": "Sets data-theme (and .dark/.light) on a wrapper so Daybreak v2 roles resolve. Defaults to system; dark when there is no preference.",
       "behaviour": "plain",
       "behaviourReason": "Theme class + context only.",
       "variants": {},
