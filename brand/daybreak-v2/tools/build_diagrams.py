@@ -236,7 +236,7 @@ def vmette():
     return d
 
 def conduit():
-    d = D('conduit-credvault', 840, 288, 'Conduit and CredVault', 'An agent calls Conduit over REST or MCP. Conduit asks CredVault for a valid credential, then executes the declared action against provider APIs. Conduit does not store secrets.')
+    d = D('conduit', 840, 288, 'Conduit', 'An agent calls Conduit over REST or MCP. Conduit asks CredVault for a valid credential, then executes the declared action against provider APIs. Conduit does not store secrets.')
     d.k = 1.15
     node(d, 24, 72, 136, 80, 'Agent', 'Tool call')
     d.arrow([(160, 112), (248, 112)])
@@ -256,9 +256,29 @@ def conduit():
     node(d, 232, 216, 256, 56, 'CredVault', 'Per-user OAuth tokens and API keys')
     return d
 
+def credvault():
+    d = D('credvault', 840, 288, 'CredVault', 'Conduit asks CredVault for a user\'s token. CredVault keeps per-end-user OAuth tokens and API keys encrypted at rest, refreshes them with the provider on expiry and rotation, and returns a valid token.')
+    d.k = 1.15
+    node(d, 16, 104, 152, 80, 'Conduit', 'Asks for a token')
+    d.arrow([(168, 128), (296, 128)])
+    d.text(232, 116, 'token for user', 10, 'mono', 400, 'fg3', 'middle')
+    d.arrow([(296, 160), (168, 160)])
+    d.text(232, 182, 'valid token', 10, 'mono', 400, 'fg3', 'middle')
+    d.box(296, 40, 280, 208, stroke='accent')
+    d.text(320, 72, 'CredVault', 14, 'sans', 600, 'accent_text', 'start', (296, 280))
+    rows = ['Per-end-user OAuth tokens', 'and API keys', 'Encrypted at rest', 'Valid across expiry', 'and rotation']
+    ys = [100, 120, 152, 184, 204]
+    for y, r in zip(ys, rows):
+        d.text(320, y, r, 12, 'sans', 400, 'fg2', 'start', (296, 280))
+    d.line([(320, 132.5), (552, 132.5)]); d.line([(320, 164.5), (552, 164.5)])
+    d.arrow([(576, 144), (656, 144)])
+    d.text(616, 132, 'refresh', 10, 'mono', 400, 'fg3', 'middle')
+    node(d, 656, 104, 168, 80, 'OAuth providers', 'Token endpoints')
+    return d
+
 def main():
     out_dark = os.path.join(ROOT, 'assets/v2'); out_light = os.path.join(ROOT, 'assets/v2/light')
-    for fn in (formit, waypoint, agent_run, skills, plane, vmette, conduit):
+    for fn in (formit, waypoint, agent_run, skills, plane, vmette, conduit, credvault):
         d = fn()
         for theme, out in (('dark', out_dark), ('light', out_light)):
             # render twice so subset includes all chars (chars collected at build time already)
