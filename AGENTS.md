@@ -117,7 +117,7 @@ Light tokens sit on `:root`. Dark overrides apply to `.dark` and `[data-theme="d
 
 ## Brand
 
-Logo masters live in `/brand`. In product UI use `@chamuka/icons` (`Mark`, `LockupHorizontal`, …). Do not recolour the sun, horizon, or gold bar. Product chrome icons: Lucide, 1.5–2px, `currentColor`.
+Logo masters live in `/brand`. The Daybreak v2 web spec (dark and light themes, no shadows, hairline borders) is in `brand/daybreak-v2/SPEC.md`. The packages still ship v1 tokens until the migration lands. In product UI use `@chamuka/icons` (`Mark`, `LockupHorizontal`, …). Do not recolour the sun, horizon, or gold bar. Product chrome icons: Lucide, 1.5–2px, `currentColor`.
 
 ## Commands
 

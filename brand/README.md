@@ -19,6 +19,7 @@ brand/
 ├── README.md                 This file
 ├── docs/                     Colour, type, and voice
 ├── tokens.css                Regenerated screen snapshot (apps should use @chamuka/tokens)
+├── daybreak-v2/              Daybreak v2 web spec: SPEC.md, tokens.css (dark + light), Archivo font, diagram generator
 ├── colors.json               Hex, RGB, HSL, contrast, and print notes
 ├── scripts/                  _build.py, _templates.py, _surfaces.py
 ├── svg/                      Logo and lockup SVG masters (outlined type)
@@ -35,6 +36,12 @@ brand/
 Digital surface templates (GitHub, OG, slides, email, web) live at [`/templates`](../templates) so they sit beside the product design system rather than inside the print pack.
 
 Start from the SVGs, not the PNGs, for any production use. PNG previews are for checking, not for print.
+
+## Daybreak v2 (web)
+
+[`daybreak-v2/`](./daybreak-v2) is the second generation of the visual language. It's dark-first with a light "paper" theme, uses ember #E24E1B as the only accent, Archivo condensed for display, and IBM Plex for body and labels. It has no shadows and uses only uniform hairline borders. The rationale, palette with contrast ratios, type, components and do's and don'ts are in [`daybreak-v2/SPEC.md`](./daybreak-v2/SPEC.md). [chamuka-labs.github.io](https://chamuka-labs.github.io/) runs on it.
+
+`@chamuka/tokens` and `@chamuka/ui` still ship v1 values. Moving the packages to v2 is a follow-up.
 
 ## How to use the logos
 
