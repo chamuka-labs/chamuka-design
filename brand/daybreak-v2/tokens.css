@@ -1,0 +1,236 @@
+/* Daybreak v2 tokens — Chamuka Labs
+   Two themes, one system: dark (default) and light "paper". One hot accent (ember #E24E1B).
+   Condensed display, neutral body, mono for labels. Spec: SPEC.md in this folder.
+
+   Layers:
+   1. Raw palette (--db-ground, --db-cream, --db-ember …) — fixed values, never themed.
+   2. Semantic roles (--db-bg, --db-fg, --db-accent-text …) — what components use; themed below.
+
+   Theme selection:
+   - No attribute: follows prefers-color-scheme.
+   - <html data-theme="light"> or <html data-theme="dark">: forced. */
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(./fonts/archivo-latin-wdth-normal.woff2) format('woff2-variations');
+}
+
+:root {
+  /* ---------- Palette: ground (warm near-black) ---------- */
+  --db-ground: #12100E;      /* page */
+  --db-ground-2: #1A1714;    /* panel */
+  --db-ground-3: #211D19;    /* raised: inputs, chips, hovered panel */
+  --db-line: #34302A;        /* hairline, decorative 1.45:1 */
+  --db-line-strong: #4A443B; /* panel edge, input edge 1.97:1 */
+  --db-line-focus: #8F8678;  /* hovered edges */
+
+  /* ---------- Palette: text (warm cream, never pure white) ---------- */
+  --db-cream: #F2EAD9;       /* primary text 15.9:1 */
+  --db-stone: #A39A89;       /* secondary text 6.8:1 */
+  --db-dust: #8F8678;        /* tertiary text, meta 5.3:1 */
+  --db-ash: #7E7668;         /* large muted display only (>=24px) 4.2:1 */
+
+  /* ---------- Palette: the accent ---------- */
+  --db-ember: #E24E1B;       /* identity; fills, labels, rules. 4.8:1 on ground */
+  --db-ember-hi: #F06A3A;    /* ember text on --db-ground-3 and hover fill */
+  --db-ember-lo: #B8380F;    /* ember text on paper at 4.9:1 (not a fill: ink on it is 3.3:1) */
+  --db-on-ember: #12100E;    /* text on ember fills 4.8:1 (cream fails at 3.3:1) */
+
+  /* ---------- Palette: signal (diagrams and status only, never chrome) ---------- */
+  --db-gold: #E6B422;
+  --db-slate: #7FA0D4;       /* v1 slate #2B4C7E lifted for dark */
+  --db-mineral: #3FB39F;
+  --db-forest: #5E9C7E;
+  --db-coral: #E8789C;
+
+  /* ---------- Paper palette (light theme) ---------- */
+  --db-paper: #F2EAD9;       /* light page (= --db-cream) */
+  --db-paper-2: #F8F3E8;     /* light panel */
+  --db-paper-3: #EAE0CC;     /* light raised */
+  --db-rule: #D9CEB8;        /* light hairline */
+  --db-rule-strong: #C4B8A0; /* light edge */
+  --db-ink: #12100E;         /* light primary text 15.9:1 on paper */
+  --db-ink-2: #4F483E;       /* light secondary 7.5:1 */
+  --db-ink-3: #5C5449;       /* light tertiary 6.2:1 */
+  --db-ink-4: #7A7163;       /* light large muted display only 4.0:1 */
+  --db-ember-ink: #A8340E;   /* ember as small text on paper 5.6:1 */
+  --db-ember-ink-hi: #9C2F0C;/* hover of the above 6.2:1 */
+  --db-on-paper: #12100E;
+  /* signal, light (v1 originals) */
+  --db-gold-ink: #A07800;
+  --db-slate-ink: #2B4C7E;
+  --db-mineral-ink: #1F7A6B;
+  --db-forest-ink: #2F6B4F;
+  --db-coral-ink: #B83A66;
+
+  /* ---------- Type ---------- */
+  --db-font-display: 'Archivo', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  --db-font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --db-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --db-display-stretch: 72%;   /* condensed */
+  --db-display-weight: 800;
+
+  /* Display scale (fluid). Line-height 0.9, uppercase, tracking -0.01em */
+  --db-text-hero: clamp(3rem, 2.1rem + 3.6vw, 5.75rem);   /* 48 -> 92: the one hero headline */
+  --db-text-mega: clamp(3.5rem, 2.2rem + 6.4vw, 9.5rem);  /* 56 -> 152: decorative wordmark only */
+  --db-text-d1:   clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem); /* 36 -> 60: section headings */
+  --db-text-d2:   clamp(2rem, 1.6rem + 1.6vw, 3rem);      /* 32 -> 48 */
+  --db-text-d3:   clamp(1.5rem, 1.3rem + 0.8vw, 2rem);   /* 24 -> 32 */
+  --db-text-d4:   1.5rem;                                 /* 24 */
+  /* Body scale */
+  --db-text-lead: clamp(1.125rem, 1rem + 0.4vw, 1.3125rem); /* 18 -> 21 */
+  --db-text-body: 1rem;        /* 16 */
+  --db-text-small: 0.9375rem;  /* 15 */
+  --db-text-label: 0.8125rem;  /* 13, mono uppercase, tracking 0.08em */
+  --db-text-micro: 0.75rem;    /* 12 */
+
+  --db-leading-display: 0.9;
+  --db-leading-tight: 1.15;
+  --db-leading-body: 1.6;
+  --db-tracking-display: -0.01em;
+  --db-tracking-label: 0.08em;
+
+  /* ---------- Space (4px base, generous section rhythm) ---------- */
+  --db-space-1: 4px;
+  --db-space-2: 8px;
+  --db-space-3: 12px;
+  --db-space-4: 16px;
+  --db-space-5: 24px;
+  --db-space-6: 32px;
+  --db-space-7: 48px;
+  --db-space-8: 64px;
+  --db-space-9: 96px;
+  --db-space-10: 128px;
+  --db-space-11: 192px;
+  --db-section: clamp(96px, 8vw + 48px, 192px);  /* vertical gap between sections */
+
+  /* ---------- Layout ---------- */
+  --db-container: 1200px;
+  --db-container-narrow: 800px;
+  --db-gutter: clamp(20px, 4vw, 32px);
+  --db-columns: 12;
+
+  /* ---------- Radii (near-square; confidence, not softness) ---------- */
+  --db-radius-0: 0;
+  --db-radius-1: 2px;   /* buttons, chips, inputs */
+  --db-radius-2: 4px;   /* panels, cards */
+  --db-radius-pill: 999px; /* status dots only */
+
+  /* ---------- Elevation ----------
+     None. Daybreak v2 has no shadows of any kind (box, drop, text, SVG filter).
+     Depth comes from fill steps (bg -> surface -> raised) and uniform 1px hairlines. */
+  --db-hairline: 1px;
+
+
+  /* ---------- Motion ---------- */
+  --db-ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --db-dur-fast: 120ms;
+  --db-dur: 220ms;
+  --db-dur-slow: 480ms;
+
+}
+
+/* ===================== Semantic roles: DARK (default) ===================== */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --db-bg: var(--db-ground);
+  --db-surface: var(--db-ground-2);
+  --db-raised: var(--db-ground-3);
+  --db-border: var(--db-line);
+  --db-border-strong: var(--db-line-strong);
+  --db-border-hover: var(--db-line-focus);
+  --db-fg: var(--db-cream);          /* 15.9 bg · 14.9 surface · 14.0 raised */
+  --db-fg-2: var(--db-stone);        /*  6.8 · 6.4 · 6.0 */
+  --db-fg-3: var(--db-dust);         /*  5.3 · 5.0 · 4.7 */
+  --db-fg-large: var(--db-ash);      /*  4.2 · 4.0 — 24px+ only */
+  --db-accent: var(--db-ember);      /* fills, rules, wordmark */
+  --db-accent-hover: var(--db-ember-hi);
+  --db-accent-press: var(--db-ember);
+  --db-on-accent: var(--db-on-ember);/* 4.8 on ember · 6.2 on hover */
+  --db-accent-text: var(--db-ember); /* small ember text 4.8 bg · 4.5 surface */
+  --db-accent-text-hover: var(--db-ember-hi); /* 5.4 raised */
+  --db-sig-gold: var(--db-gold);
+  --db-sig-slate: var(--db-slate);
+  --db-sig-mineral: var(--db-mineral);
+  --db-sig-forest: var(--db-forest);
+  --db-sig-coral: var(--db-coral);
+  --db-header-bg: rgb(18 16 14 / 0.82);
+  --db-focus: var(--db-ember-hi);   /* 2px outline, 2px offset — outline, not a shadow */
+  --db-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --db-hatch: repeating-linear-gradient(135deg, rgb(242 234 217 / 0.025) 0 1px, transparent 1px 10px);
+}
+
+/* ===================== Semantic roles: LIGHT "paper" ===================== */
+/* The block is written twice on purpose: once for the system preference
+   (unless dark is forced), once for an explicit data-theme="light". Keep them identical. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --db-bg: var(--db-paper);
+    --db-surface: var(--db-paper-2);
+    --db-raised: var(--db-paper-3);
+    --db-border: var(--db-rule);
+    --db-border-strong: var(--db-rule-strong);
+    --db-border-hover: var(--db-ink-3);
+    --db-fg: var(--db-ink);             /* 15.9 bg · 17.2 surface · 14.5 raised */
+    --db-fg-2: var(--db-ink-2);         /*  7.5 · 8.2 · 6.9 */
+    --db-fg-3: var(--db-ink-3);         /*  6.2 · 6.7 · 5.7 */
+    --db-fg-large: var(--db-ink-4);     /*  4.0 · 4.3 — 24px+ only */
+    --db-accent: var(--db-ember);       /* fills, rules, wordmark: 3.3 on paper = non-text/large only */
+    --db-accent-hover: var(--db-ember-hi);
+    --db-accent-press: var(--db-ember);
+    --db-on-accent: var(--db-on-ember); /* ink on ember 4.8 · on hover 6.2 */
+    --db-accent-text: var(--db-ember-ink);        /* 5.6 bg · 6.0 surface · 5.1 raised */
+    --db-accent-text-hover: var(--db-ember-ink-hi);/* 6.2 · 6.7 · 5.7 */
+    --db-sig-gold: var(--db-gold-ink);
+    --db-sig-slate: var(--db-slate-ink);
+    --db-sig-mineral: var(--db-mineral-ink);
+    --db-sig-forest: var(--db-forest-ink);
+    --db-sig-coral: var(--db-coral-ink);
+    --db-header-bg: rgb(242 234 217 / 0.85);
+    --db-focus: var(--db-ember-ink);
+    --db-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --db-hatch: repeating-linear-gradient(135deg, rgb(18 16 14 / 0.035) 0 1px, transparent 1px 10px);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --db-bg: var(--db-paper);
+  --db-surface: var(--db-paper-2);
+  --db-raised: var(--db-paper-3);
+  --db-border: var(--db-rule);
+  --db-border-strong: var(--db-rule-strong);
+  --db-border-hover: var(--db-ink-3);
+  --db-fg: var(--db-ink);
+  --db-fg-2: var(--db-ink-2);
+  --db-fg-3: var(--db-ink-3);
+  --db-fg-large: var(--db-ink-4);
+  --db-accent: var(--db-ember);
+  --db-accent-hover: var(--db-ember-hi);
+  --db-accent-press: var(--db-ember);
+  --db-on-accent: var(--db-on-ember);
+  --db-accent-text: var(--db-ember-ink);
+  --db-accent-text-hover: var(--db-ember-ink-hi);
+  --db-sig-gold: var(--db-gold-ink);
+  --db-sig-slate: var(--db-slate-ink);
+  --db-sig-mineral: var(--db-mineral-ink);
+  --db-sig-forest: var(--db-forest-ink);
+  --db-sig-coral: var(--db-coral-ink);
+  --db-header-bg: rgb(242 234 217 / 0.85);
+  --db-focus: var(--db-ember-ink);
+  --db-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --db-hatch: repeating-linear-gradient(135deg, rgb(18 16 14 / 0.035) 0 1px, transparent 1px 10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --db-dur-fast: 0ms;
+    --db-dur: 0ms;
+    --db-dur-slow: 0ms;
+  }
+}
