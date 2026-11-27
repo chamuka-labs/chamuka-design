@@ -1,6 +1,6 @@
 {
   "name": "@chamuka/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Daybreak React components for Chamuka Labs products.",
   "license": "Apache-2.0",
@@ -20,7 +20,10 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup && node ../../scripts/prepend-use-client.mjs dist/index.js && tailwindcss -i src/styles.css -o dist/styles.css",
     "lint": "eslint .",

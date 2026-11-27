@@ -1,6 +1,6 @@
 {
   "name": "@chamuka/icons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Daybreak mark, lockups, and product marks as React components.",
   "license": "Apache-2.0",
@@ -19,7 +19,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "generate": "tsx src/generate.ts",
     "build": "tsx src/generate.ts && tsup && node ../../scripts/prepend-use-client.mjs dist/index.js",

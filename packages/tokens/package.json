@@ -1,6 +1,6 @@
 {
   "name": "@chamuka/tokens",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Daybreak design tokens for Chamuka Labs products.",
   "license": "Apache-2.0",
@@ -26,7 +26,11 @@
     "./tokens.css": "./dist/tokens.css",
     "./theme.css": "./dist/theme.css"
   },
-  "files": ["dist", "src/tokens", "README.md"],
+  "files": [
+    "dist",
+    "src/tokens",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsx src/build.ts && tsup",
     "lint": "eslint .",
